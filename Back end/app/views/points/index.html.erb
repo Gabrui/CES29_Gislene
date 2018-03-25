@@ -1,0 +1,22 @@
+<h1>Lista de pontos</h1>
+
+<%= link_to 'Inserir ponto', new_point_path %>
+<table>
+  <tr>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @points.each do |point| %>
+    <tr>
+      <td><%= point.lat %></td>
+      <td><%= point.lon %></td>
+      <td><%= link_to 'Detalhes', point_path(point) %></td>
+      <td><%= link_to 'Editar', edit_point_path(point) %></td>
+      <td><%= link_to 'Deletar', point_path(point),
+              method: :delete,
+              data: { confirm: 'Você tem certeza?' } %></td>
+    </tr>
+  <% end %>
+</table>
