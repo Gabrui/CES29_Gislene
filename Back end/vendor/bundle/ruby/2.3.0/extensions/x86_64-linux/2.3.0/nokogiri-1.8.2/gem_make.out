@@ -1,5 +1,5 @@
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.2/ext/nokogiri
-/usr/bin/ruby2.3 -r ./siteconf20180411-730-1mrhjls.rb extconf.rb --use-system-libraries
+/usr/bin/ruby2.3 -r ./siteconf20180411-23106-yl69jf.rb extconf.rb --use-system-libraries
 checking if the C compiler accepts ... yes
 Building nokogiri using system libraries.
 checking for xmlParseDoc() in libxml/parser.h... yes
@@ -214,4 +214,4 @@ rm -rf /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back 
 
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/nokogiri-1.8.2/ext/nokogiri
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20180411-730-h33fln/nokogiri
+/usr/bin/install -c -m 0755 nokogiri.so ./.gem.20180411-23106-v2l4q4/nokogiri

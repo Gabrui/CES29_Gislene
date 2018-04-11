@@ -1,5 +1,5 @@
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
-/usr/bin/ruby2.3 -r ./siteconf20180411-21295-kfz3ys.rb extconf.rb
+/usr/bin/ruby2.3 -r ./siteconf20180411-23106-1jxx6f7.rb extconf.rb
 checking for ffi_call() in -lffi... yes
 checking for ffi_closure_alloc()... yes
 checking for ffi_raw_call()... yes
@@ -64,4 +64,4 @@ linking shared-object ffi_c.so
 
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/ffi-1.9.23/ext/ffi_c
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20180411-21295-105wtet
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20180411-23106-27jyvk

@@ -1,5 +1,5 @@
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/pg-1.0.0/ext
-/usr/bin/ruby2.3 -r ./siteconf20180411-22253-ccmso.rb extconf.rb
+/usr/bin/ruby2.3 -r ./siteconf20180411-23106-16a5e0w.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/bin/pg_config
 checking for libpq-fe.h... yes
@@ -49,4 +49,4 @@ linking shared-object pg_ext.so
 
 current directory: /home/gustavo-nahum/Documentos/ITA/inaldo/github-repo/CES29_Gislene/Back end/vendor/bundle/ruby/2.3.0/gems/pg-1.0.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20180411-22253-1po4ihg
+/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20180411-23106-1sjjecv

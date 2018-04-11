@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :points
 
-  root 'welcome#index'
+  root 'welcome#index'  
+
 end
