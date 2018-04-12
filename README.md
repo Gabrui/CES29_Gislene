@@ -14,7 +14,7 @@ De posse dos programas acima instalados e rodando corretamente, vá na pasta do 
 ```
 vagrant up
 ```
-OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo.
+OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo. Um comando que ajuda a configurar a VirtualBox em caso de problema é o sudo /sbin/vboxconfig.
 
 Esse comando irá baixar a imagem de uma nova máquina virtual e instalar todas as dependências (banco de dados) nela, isso pode demorar um pouco pela primeira vez.
 
