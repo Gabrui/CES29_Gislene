@@ -4,6 +4,7 @@ Utilizar a máquina virtual VirtualBox com o gerenciador Vagrant para rodar o se
 https://www.vagrantup.com/downloads.html
 https://www.virtualbox.org/wiki/Downloads
 
+Recomendo fortemente instalar pelo instalador do site e não pelo apt-get, pois o meu Virtual Box deu problema, só funcionou com o do site.
 ```
 sudo apt-get install vagrant
 sudo apt-get install virtualbox
@@ -15,6 +16,7 @@ De posse dos programas acima instalados e rodando corretamente, vá na pasta do 
 vagrant up
 ```
 OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo. Um comando que ajuda a configurar a VirtualBox em caso de problema é o sudo /sbin/vboxconfig.
+OBS2: No linux não coloque essa pasta em um sistema de arquivos que não é linux, perdi tempo com isso.
 
 Esse comando irá baixar a imagem de uma nova máquina virtual e instalar todas as dependências (banco de dados) nela, isso pode demorar um pouco pela primeira vez.
 
