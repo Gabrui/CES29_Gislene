@@ -962,9 +962,9 @@ en:
   layouts:
     project_name:
       # in <title>
-      title: OpenStreetMap
+      title: Gislene
       # in <h1>
-      h1: OpenStreetMap
+      h1: Gislene
     logo:
       alt_text: OpenStreetMap logo
     home: Go to Home Location

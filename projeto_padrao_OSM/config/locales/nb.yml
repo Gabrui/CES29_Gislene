@@ -919,8 +919,8 @@ nb:
       more_results: Flere resultat
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: OpenStreetMap-logo
     home: Gå til din brukers hjemmeadresse

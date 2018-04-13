@@ -941,8 +941,8 @@ ca:
       more_results: Més resultats
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: logotip de l'OpenStreetMap
     home: Vés a la ubicació d'inici

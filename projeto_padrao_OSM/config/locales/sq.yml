@@ -879,8 +879,8 @@ sq:
       more_results: Më shumë rezultate
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: Logoja e OpenStreetMap
     logout: Çidentifikohu

@@ -990,8 +990,8 @@ is:
       more_results: Fleiri niðurstöður
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: OpenStreetMap merkið
     home: Fara heim

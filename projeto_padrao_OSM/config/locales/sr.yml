@@ -951,8 +951,8 @@ sr:
       more_results: Више резултата
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: Логотип OpenStreetMap-а
     home: Кућа

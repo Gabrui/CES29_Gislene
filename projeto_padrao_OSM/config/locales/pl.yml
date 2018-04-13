@@ -1014,8 +1014,8 @@ pl:
       more_results: Więcej wyników
   layouts:
     project_name:
-      title: OpenStreetMap
-      h1: OpenStreetMap
+      title: Gislene
+      h1: Gislene
     logo:
       alt_text: Logo OpenStreetMap
     home: Przejdź do położenia domu
