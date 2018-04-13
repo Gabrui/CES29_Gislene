@@ -300,7 +300,7 @@ nav.primary {
       }
       > a:hover { background: #4169e1; }
       &.current > a:hover { background: #4169e1; }
-      &.disabled > a:hover { background: lighten($green, 38%); }
+      &.disabled > a:hover { background: #4165e1; }
       &.dropdown {
         > a.tab { border-right: 1px solid #4169e1; }
         &.current > a.tab { border-right: 1px solid #4169e1; }
@@ -335,11 +335,11 @@ nav.primary {
   }
 
   .disabled a {
-    color: #ccc;
+    color: #4165e1;
     cursor: default;
 
     .caret {
-      border-top-color: #ccc;
+      border-top-color: #4165e1;
     }
   }
 
