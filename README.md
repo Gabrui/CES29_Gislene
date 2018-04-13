@@ -37,7 +37,20 @@ rails server --binding=0.0.0.0
 
 Qualquer modificação no código da pasta do projeto refletirá na máquina virtual, que usa a pasta compartilhada.
 
+Ativação do usuário criado sem serviço de e-mail:
+```
+bundle exec rails console
+user = User.find_by_display_name("My New User Name")
+user.status = "active"
+user.save!
+quit
+```
 
+Após isso, para ativar a autenticação para execução, entre nas configurações do seu usuário, configurações oauth, registrar aplicação, nome: "Local iD" e url: "http://localhost:3000", marque todas as alternativas, registre, copie o consumer key e copie para o arquivo config/application.yml.
+
+```
+id_key: suaKeyAqui
+```
 
 # CES29_Gislene sem OSM (Back end)
 
