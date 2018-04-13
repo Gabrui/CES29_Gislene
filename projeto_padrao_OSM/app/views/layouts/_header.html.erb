@@ -2,10 +2,10 @@
   <h1>
     <a href="<%= root_path %>" class="geolink">
       <picture>
-        <source srcset="<%= image_path "osm_logo.svg" %>" type="image/svg+xml"></source>
+        <source srcset="<%= image_path "osm_logo.png" %>" type="image/svg+xml"></source>
         <%= image_tag "osm_logo.png", :srcset => image_path("osm_logo.svg"), :alt => t('layouts.logo.alt_text'), :class => 'logo' %>
       </picture>
-      
+
       <%= t 'layouts.project_name.h1' %>
     </a>
   </h1>
@@ -32,29 +32,9 @@
       <li id="history_tab" class="<%= current_page_class(history_path) %>">
         <%= link_to t('layouts.history'), history_path, :class => 'tab geolink' %>
       </li>
-      <li id="export_tab" class="<%= current_page_class(export_path) %>">
-        <%= link_to t('layouts.export'), export_path, :class => 'tab geolink' %>
-      </li>
     </ul>
   </nav>
   <nav class='secondary'>
-    <ul>
-      <li class="compact-hide <%= current_page_class(traces_path) %>"><%= link_to t('layouts.gps_traces'), traces_path %></li>
-      <li class="compact-hide <%= current_page_class(diary_path) %>"><%= link_to t('layouts.user_diaries'), diary_path %></li>
-      <li class="compact-hide <%= current_page_class(copyright_path) %>"><%= link_to t('layouts.copyright'), copyright_path %></li>
-      <li class="compact-hide <%= current_page_class(help_path) %>"><%= link_to t('layouts.help'), help_path %></li>
-      <li class="compact-hide <%= current_page_class(about_path) %>"><%= link_to t('layouts.about'), about_path %></li>
-      <li id="compact-secondary-nav" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= t 'layouts.more' %> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li class="<%= current_page_class(traces_path) %>"><%= link_to t('layouts.gps_traces'), traces_path %></li>
-          <li class="<%= current_page_class(diary_path) %>"><%= link_to t('layouts.user_diaries'), diary_path %></li>
-          <li class="<%= current_page_class(copyright_path) %>"><%= link_to t('layouts.copyright'), copyright_path %></li>
-          <li class="<%= current_page_class(help_path) %>"><%= link_to t('layouts.help'), help_path %></li>
-          <li class="<%= current_page_class(about_path) %>"><%= link_to t('layouts.about'), about_path %></li>
-        </ul>
-      </li>
-    </ul>
     <% if current_user && current_user.id %>
       <div class='dropdown user-menu logged-in'>
         <a class='dropdown-toggle' data-toggle='dropdown' href="#">
