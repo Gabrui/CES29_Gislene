@@ -5,8 +5,6 @@ class SiteControllerTest < ActionController::TestCase
   # setup oauth keys
   def setup
     Object.const_set("ID_KEY", create(:client_application).key)
-    Object.const_set("POTLATCH2_KEY", create(:client_application).key)
-
     stub_hostip_requests
   end
 
@@ -14,7 +12,6 @@ class SiteControllerTest < ActionController::TestCase
   # clear oauth keys
   def teardown
     Object.send("remove_const", "ID_KEY")
-    Object.send("remove_const", "POTLATCH2_KEY")
   end
 
   ##
@@ -188,24 +185,6 @@ class SiteControllerTest < ActionController::TestCase
     assert_template :partial => "_id", :count => 1
 
     user = create(:user)
-    user.preferred_editor = "potlatch2"
-    user.save!
-
-    get :edit, :session => { :user => user }
-    assert_response :success
-    assert_template "edit"
-    assert_template :partial => "_potlatch2", :count => 1
-
-    user = create(:user)
-    user.preferred_editor = "potlatch"
-    user.save!
-
-    get :edit, :session => { :user => user }
-    assert_response :success
-    assert_template "edit"
-    assert_template :partial => "_potlatch", :count => 1
-
-    user = create(:user)
     user.preferred_editor = "remote"
     user.save!
 
@@ -220,16 +199,6 @@ class SiteControllerTest < ActionController::TestCase
     assert_response :success
     assert_template "edit"
     assert_template :partial => "_id", :count => 1
-
-    get :edit, :params => { :editor => "potlatch2" }, :session => { :user => create(:user) }
-    assert_response :success
-    assert_template "edit"
-    assert_template :partial => "_potlatch2", :count => 1
-
-    get :edit, :params => { :editor => "potlatch" }, :session => { :user => create(:user) }
-    assert_response :success
-    assert_template "edit"
-    assert_template :partial => "_potlatch", :count => 1
 
     get :edit, :params => { :editor => "remote" }, :session => { :user => create(:user) }
     assert_response :success

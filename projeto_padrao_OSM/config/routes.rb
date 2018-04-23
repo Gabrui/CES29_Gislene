@@ -81,11 +81,6 @@ GisleneOSM::Application.routes.draw do
     get "gpx/:id/details" => "trace#api_read", :id => /\d+/
     get "gpx/:id/data" => "trace#api_data"
 
-    # AMF (ActionScript) API
-    post "amf/read" => "amf#amf_read"
-    post "amf/write" => "amf#amf_write"
-    get "swf/trackpoints" => "swf#trackpoints"
-
     # Map notes API
     resources :notes, :except => [:new, :edit, :update], :constraints => { :id => /\d+/ }, :defaults => { :format => "xml" } do
       collection do
