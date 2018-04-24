@@ -57,7 +57,7 @@ window.updateLinks = function (loc, zoom, layers, object) {
     link.href = href;
   });
 
-  var editDisabled = zoom < 13;
+  var editDisabled = zoom < 13; // Cuida que eu não entendi esse daqui
   $('#edit_tab')
     .tooltip({placement: 'bottom'})
     .off('click.minzoom')

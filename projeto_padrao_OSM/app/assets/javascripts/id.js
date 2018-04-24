@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     container.className = 'unsupported';
   } else {
     var id = iD.Context()
+      .minEditableZoom(7)
       .embed(true)
       .assetPath("iD/")
       .assetMap(JSON.parse(container.dataset.assetMap))
