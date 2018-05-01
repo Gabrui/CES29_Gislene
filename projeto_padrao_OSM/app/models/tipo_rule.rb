@@ -1,0 +1,2 @@
+class TipoRule < ApplicationRecord
+end

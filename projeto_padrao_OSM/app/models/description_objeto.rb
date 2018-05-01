@@ -1,0 +1,2 @@
+class DescriptionObjeto < ApplicationRecord
+end
