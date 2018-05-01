@@ -1,0 +1,2 @@
+class ObjetoValue < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class PropertyRule < ApplicationRecord
+end

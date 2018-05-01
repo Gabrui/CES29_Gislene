@@ -1,0 +1,2 @@
+class ObjetoType < ApplicationRecord
+end

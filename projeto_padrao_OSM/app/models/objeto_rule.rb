@@ -1,0 +1,2 @@
+class ObjetoRule < ApplicationRecord
+end
