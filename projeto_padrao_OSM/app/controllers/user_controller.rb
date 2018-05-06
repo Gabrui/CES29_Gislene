@@ -234,7 +234,7 @@ class UserController < ApplicationController
     if check_signup_allowed(current_user.email)
       session[:referer] = params[:referer]
 
-      current_user.status = "pending"
+      current_user.status = "active"
 
       if current_user.auth_provider.present? && current_user.pass_crypt.empty?
         # We are creating an account with external authentication and
@@ -290,6 +290,11 @@ class UserController < ApplicationController
   end
 
   def confirm
+    # if current_user && current_user.terms_agreed?
+    #   # Already agreed to terms, so just show settings
+    #   redirect_to :action => :account, :display_name => current_user.display_name
+    # elsif current_user.nil? && session[:new_user].nil?
+    #   redirect_to :action => :login, :referer => request.fullpath
     if request.post?
       token = UserToken.find_by(:token => params[:confirm_string])
       if token && token.user.active?
