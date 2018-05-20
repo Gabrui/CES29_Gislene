@@ -394,7 +394,7 @@ function checkDeprecatedMixinEvents(includes) {
 	if (typeof L === 'undefined' || !L || !L.Mixin) { return; }
 
 	includes = isArray(includes) ? includes : [includes];
-
+/*
 	for (var i = 0; i < includes.length; i++) {
 		if (includes[i] === L.Mixin.Events) {
 			console.warn('Deprecated include of L.Mixin.Events: ' +
@@ -402,6 +402,7 @@ function checkDeprecatedMixinEvents(includes) {
 				'please inherit from L.Evented instead.', new Error().stack);
 		}
 	}
+*/
 }
 
 /*

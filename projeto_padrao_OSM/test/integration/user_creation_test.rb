@@ -73,19 +73,25 @@ class UserCreationTest < ActionDispatch::IntegrationTest
       new_email = "#{locale}newtester@osm.org"
       display_name = "#{locale}_new_tester"
 
+      post "/user/new", :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :pass_crypt => "testtest", :pass_crypt_confirmation => "testtest" } }
+
+      assert_redirected_to "/user/terms"
+
+      post "/user/save", :headers => { "HTTP_ACCEPT_LANGUAGE" => locale.to_s }
+      follow_redirect!
+
+
+=begin Não foi enviado e-mail
       assert_difference("User.count", 0) do
-        assert_difference("ActionMailer::Base.deliveries.size", 0) do
-          post "/user/new",
+        post "/user/new",
                :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :pass_crypt => "testtest", :pass_crypt_confirmation => "testtest" } }
-        end
       end
 
       assert_redirected_to "/user/terms"
 
       assert_difference("User.count") do
-        assert_difference("ActionMailer::Base.deliveries.size", 1) do
-          post "/user/save",
-               :headers => { "HTTP_ACCEPT_LANGUAGE" => locale.to_s }
+        assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
+          post "/user/save", :headers => { "HTTP_ACCEPT_LANGUAGE" => locale.to_s }
           follow_redirect!
         end
       end
@@ -96,12 +102,17 @@ class UserCreationTest < ActionDispatch::IntegrationTest
       assert_equal register_email.to.first, new_email
       # Check that the confirm account url is correct
       assert_match /#{@url}/, register_email.body.to_s
-
+=end
       # Check the page
       assert_response :success
-      assert_template "user/confirm"
+      assert_template "site/welcome" # Vai para a pagina inicial
+
+      get "/logout"
+      session_id = assert_select("input[name=session]").first["value"]
+      get "/logout", :params => { :session => session_id }
 
       ActionMailer::Base.deliveries.clear
+      
     end
   end
 
@@ -121,7 +132,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :pass_crypt => password, :pass_crypt_confirmation => password }, :referer => referer }
         assert_redirected_to "/user/terms"
@@ -130,7 +141,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -156,6 +167,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -167,7 +179,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-openid"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "openid", :auth_uid => "http://localhost:1123/new.tester", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -187,7 +199,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -228,7 +240,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "openid", :auth_uid => "http://localhost:1123/new.tester", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -244,7 +256,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -270,6 +282,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -283,7 +296,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-google"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "google", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -303,7 +316,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -346,7 +359,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "google", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -362,7 +375,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -388,6 +401,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -399,7 +413,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-facebook"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "facebook", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -419,7 +433,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -460,7 +474,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "facebook", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -476,7 +490,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -502,6 +516,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -513,7 +528,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-windowslive"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "windowslive", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -533,7 +548,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -574,7 +589,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "windowslive", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -590,7 +605,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -616,6 +631,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -627,7 +643,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-github"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "github", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -647,7 +663,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -688,7 +704,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "github", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -704,7 +720,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -730,6 +746,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end
@@ -741,7 +758,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     display_name = "new_tester-wikipedia"
     password = "testtest"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "wikipedia", :pass_crypt => "", :pass_crypt_confirmation => "" } }
         assert_response :redirect
@@ -761,7 +778,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
 
     # Check the page
     assert_response :success
-    assert_template "user/confirm"
+    assert_template "site/welcome"
 
     ActionMailer::Base.deliveries.clear
   end
@@ -802,7 +819,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     # nothing special about this page, just need a protected page to redirect back to.
     referer = "/traces/mine"
     assert_difference("User.count") do
-      assert_difference("ActionMailer::Base.deliveries.size", 1) do
+      assert_difference("ActionMailer::Base.deliveries.size", 0) do # Nao estamos enviando email
         post "/user/new",
              :params => { :user => { :email => new_email, :email_confirmation => new_email, :display_name => display_name, :auth_provider => "wikipedia", :pass_crypt => "", :pass_crypt_confirmation => "" }, :referer => referer }
         assert_response :redirect
@@ -818,7 +835,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
         follow_redirect!
       end
     end
-
+=begin Não foi enviado e-mail
     # Check the e-mail
     register_email = ActionMailer::Base.deliveries.first
 
@@ -844,6 +861,7 @@ class UserCreationTest < ActionDispatch::IntegrationTest
     post "/user/#{display_name}/confirm", :params => { :confirm_string => confirm_string }
     assert_response :redirect
     follow_redirect!
+=end
     assert_response :success
     assert_template "site/welcome"
   end

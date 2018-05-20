@@ -36,7 +36,7 @@ div.location-filter.button-container {
     background: -moz-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
     background: -ms-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
     background: -o-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
-    background: linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
 }
 .leaflet-container div.location-filter.button-container a:hover {
     color: #263F1C;
@@ -47,7 +47,7 @@ div.location-filter.button-container {
     background: -moz-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
     background: -ms-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
     background: -o-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
-    background: linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
 }
 
 .leaflet-container div.location-filter.button-container a.enable-button {
@@ -57,7 +57,7 @@ div.location-filter.button-container {
     background-image: url( img/filter-icon.png ), -moz-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
     background-image: url( img/filter-icon.png ), -ms-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
     background-image: url( img/filter-icon.png ), -o-linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
-    background-image: url( img/filter-icon.png ), linear-gradient(top, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
+    background-image: url( img/filter-icon.png ), linear-gradient(to bottom, rgba(218, 252, 205, 0.9) 0%, rgba(173, 226, 176, 0.9) 100%);
     background-repeat: no-repeat;
     background-position: left center;
 }
@@ -68,7 +68,7 @@ div.location-filter.button-container {
     background-image: url( img/filter-icon.png ), -moz-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
     background-image: url( img/filter-icon.png ), -ms-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
     background-image: url( img/filter-icon.png ), -o-linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
-    background-image: url( img/filter-icon.png ), linear-gradient(top, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
+    background-image: url( img/filter-icon.png ), linear-gradient(to bottom, rgba(245, 255, 240, 0.9) 0%, rgba(203, 228, 205, 0.9) 100%);
     background-repeat: no-repeat;
     background-position: left center;
 }
