@@ -310,7 +310,7 @@
         "zoom_in_edit": "Aproxime o zoom para editar",
         "login": "login",
         "logout": "sair",
-        "loading_auth": "Conectando ao OpenStreetMap...",
+        "loading_auth": "Conectando ao Gislene...",
         "report_a_bug": "Reportar um erro",
         "help_translate": "Ajude na tradução",
         "feature_info": {
@@ -320,13 +320,13 @@
         "status": {
             "error": "Incapaz de conectar à API.",
             "offline": "A API está offline. Por favor tente editar mais tarde.",
-            "readonly": "A API do OpenStreetMap está em modo somente leitura. Espere um pouco para salvar as suas alterações.",
+            "readonly": "A API do Gislene está em modo somente leitura. Espere um pouco para salvar as suas alterações.",
             "rateLimit": "A API está limitando conexões anônimas.  Você pode corrigir isso fazendo login."
         },
         "commit": {
-            "title": "Enviar para o OpenStreetMap",
-            "upload_explanation": "As alterações que você enviar ficarão visíveis em todos os mapas que usam dados do OpenStreetMap. Atenção: NÃO é permitido copiar nomes de ruas do Google Maps, Bing, Here, mapas impressos ou quaisquer fontes que possuam copyright.",
-            "upload_explanation_with_user": "As alterações que você enviar como {user} estarão visíveis em todos os mapas que usam os dados do OpenStreetMap.<br><br>\n<strong>Atenção:</strong> NÃO é permitido copiar nomes de ruas do Google Maps, Bing, Here, mapas impressos ou quaisquer fontes que possuam copyright.",
+            "title": "Enviar para o Gislene",
+            "upload_explanation": "As alterações que você enviar ficarão visíveis em todos os mapas que usam dados do Gislene. Atenção: NÃO é permitido copiar nomes de ruas do Google Maps, Bing, Here, mapas impressos ou quaisquer fontes que possuam copyright.",
+            "upload_explanation_with_user": "As alterações que você enviar como {user} estarão visíveis em todos os mapas que usam os dados do Gislene.<br><br>\n<strong>Atenção:</strong> NÃO é permitido copiar nomes de ruas do Google Maps, Bing, Here, mapas impressos ou quaisquer fontes que possuam copyright.",
             "request_review": "Eu gostaria que alguém revisasse minhas edições.",
             "save": "Enviar",
             "cancel": "Cancelar",
@@ -426,7 +426,7 @@
             "role": "Papel",
             "choose": "Selecione o tipo de elemento",
             "results": "{n} resultado(s) para {search}",
-            "reference": "Ver no wiki do OpenStreetMap",
+            "reference": "Ver no wiki do Gislene",
             "back_tooltip": "Alterar elemento",
             "remove": "Remover",
             "search": "Procurar",
@@ -488,14 +488,14 @@
             "data_layers": "Camadas de Dados",
             "layers": {
                 "osm": {
-                    "tooltip": "Dados do mapa do OpenStreetMap",
-                    "title": "Dados do OpenStreetMap"
+                    "tooltip": "Dados do mapa do Gislene",
+                    "title": "Dados do Gislene"
                 }
             },
             "fill_area": "Areas de Preenchimento",
             "map_features": "Elementos do Mapa",
             "autohidden": "Estes elementos foram automaticamente ocultados porque muitos seriam exibidos na tela. Dê um zoom para editá-los.",
-            "osmhidden": "Estes elementos foram automaticamente ocultados porque a camada do OpenStreetMap está ocultada."
+            "osmhidden": "Estes elementos foram automaticamente ocultados porque a camada do Gislene está ocultada."
         },
         "feature": {
             "points": {
@@ -570,12 +570,12 @@
         },
         "save": {
             "title": "Salvar",
-            "help": "Revisar suas alterações e salvá-las no OpenStreetMap, tornando-as visíveis para outros usuários.",
+            "help": "Revisar suas alterações e salvá-las no Gislene, tornando-as visíveis para outros usuários.",
             "no_changes": "Sem alterações para salvar.",
             "error": "Ocorreram erros ao tentar salvar",
             "status_code": "O servidor retornou o status {code}",
             "unknown_error_details": "Por favor, verifique sua conexão com a internet.",
-            "uploading": "Enviando alterações para o OpenStreetMap...",
+            "uploading": "Enviando alterações para o Gislene...",
             "conflict_progress": "Verificando conflitos: {num} de {total}",
             "unsaved_changes": "Você tem alterações não salvas.",
             "conflict": {
@@ -603,7 +603,7 @@
         },
         "success": {
             "edited_osm": "OSM editado!",
-            "just_edited": "Você acaba de editar o OpenStreetMap!",
+            "just_edited": "Você acaba de editar o Gislene!",
             "view_on_osm": "Ver no OSM",
             "facebook": "Compartilhar no Facebook",
             "twitter": "Compartilhar no Twitter",
@@ -617,7 +617,7 @@
             "cancel": "Cancelar"
         },
         "splash": {
-            "welcome": "Bem vindo(a) ao editor iD do OpenStreetMap",
+            "welcome": "Bem vindo(a) ao editor iD do Gislene",
             "text": "iD é uma ferramenta amigável, porém poderosa, para contribuir no melhor mapa livre do mundo. Esta é a versão {version}. Para mais informações, consulte {website} e reporte bugs no {github}.<br><br>\n<strong>Atenção:</strong> NÃO é permitido copiar nomes de ruas do Google Maps, Bing, Here, mapas impressos ou quaisquer fontes que possuam copyright.",
             "walkthrough": "Comece o tutorial",
             "start": "Editar agora"
@@ -686,11 +686,11 @@
             "key": "H",
             "help": {
                 "title": "Ajuda",
-                "welcome": "Bem-vindo ao editor iD para o [OpenStreetMap](https://www.openstreetmap.org/). Com este editor você pode atualizar o OpenStreetMap diretamente do seu navegador.",
+                "welcome": "Bem-vindo ao editor iD para o [Gislene](https://www.openstreetmap.org/). Com este editor você pode atualizar o Gislene diretamente do seu navegador.",
                 "open_data_h": "Dados Abertos",
-                "open_data": "As edições que você fizer neste mapa ficarão visíveis para todos que usam o OpenStreetMap. Suas edições podem ser baseadas em conhecimento pessoa, pesquisa de campo, ou imagens aéreas ou capturadas no solo. Copiar de fontes comerciais, como Google Maps, [é estritamente proibido](https://www.openstreetmap.org/copyright).",
+                "open_data": "As edições que você fizer neste mapa ficarão visíveis para todos que usam o Gislene. Suas edições podem ser baseadas em conhecimento pessoa, pesquisa de campo, ou imagens aéreas ou capturadas no solo. Copiar de fontes comerciais, como Google Maps, [é estritamente proibido](https://www.openstreetmap.org/copyright).",
                 "before_start_h": "Antes de você começar",
-                "before_start": "Esteja familiarizado com o OpenStreetMap e este editor antes de começar a editar. O iD contém um tutorial para ensinar a você o básico da edição no OpenStreetMap. Clique em \"Comece o tutorial\" nesta tela para aprender - só leva cerca de 15 minutos.",
+                "before_start": "Esteja familiarizado com o Gislene e este editor antes de começar a editar. O iD contém um tutorial para ensinar a você o básico da edição no Gislene. Clique em \"Comece o tutorial\" nesta tela para aprender - só leva cerca de 15 minutos.",
                 "open_source_h": "Código aberto",
                 "open_source": "O editor iD é um projeto colaborativo com código aberto, e você está usando a versão {version} . O código fonte está disponível [no GitHub](https://github.com/openstreetmap/iD).",
                 "open_source_help": "Você pode ajudar [traduzindo](https://github.com/openstreetmap/iD/blob/master/CONTRIBUTING.md#translating) o ID ou [reportando erros](https://github.com/openstreetmap/iD/issues)."
@@ -701,7 +701,7 @@
                 "navigation_drag": "Você pode arrastar o mapa movendo o mouse enquanto segura o {leftclick} botão esquerdo. Você também pode usar as setas `↓`, `↑`, `←`, `→` no seu teclado.",
                 "navigation_zoom": "Você pode aproximar ou afastar o zoom rolando a roda do mouse ou touchpad, ou clicando nos botões {plus} / {minus} na lateral do mapa. Você também pode usar as teclas `+` e `-` no seu teclado.",
                 "features_h": "Elementos do Mapa",
-                "features": "Usamos o termo *elementos* para descrever as coisas que aparecem no mapa, como ruas, prédios, ou pontos de interesse. Qualquer coisa na vida real pode ser mapeado como um elemento no OpenStreetMap. Elementos são representados no mapa usando *pontos*, *linhas*, ou *áreas*.",
+                "features": "Usamos o termo *elementos* para descrever as coisas que aparecem no mapa, como ruas, prédios, ou pontos de interesse. Qualquer coisa na vida real pode ser mapeado como um elemento no Gislene. Elementos são representados no mapa usando *pontos*, *linhas*, ou *áreas*.",
                 "nodes_ways": "No OpenStreetmap, pontos às vezes são chamados de *nós*, e linhas e áreas às vezes são chamadas de *caminhos*."
             },
             "editing": {
@@ -713,12 +713,12 @@
                 "multiselect_shift_click": "Segure `{shift}` e então {leftclick} clique com o botão esquerdo para selecionar vários elementos de uma vez. Isto torna mais fácil mover ou excluir mais de um item.",
                 "multiselect_lasso": "Outra forma de selecionar vários elementos é segurar a tecla `{shift}`, e então pressionar e segurar o {leftclick} botão esquerdo do mouse para desenhar um laço de seleção. Todos os pontos dentro do laço serão selecionados.",
                 "undo_redo_h": "Desfazer e Refazer",
-                "undo_redo": "Suas edições são guardadas localmente no seu navegador até que você decida salvá-las no servidor do OpenStreetMap. Você pode desfazer suas edições clicando no botão {undo} **Desfazer**, e refazê-las clicando no botão {redo} **Refazer**.",
+                "undo_redo": "Suas edições são guardadas localmente no seu navegador até que você decida salvá-las no servidor do Gislene. Você pode desfazer suas edições clicando no botão {undo} **Desfazer**, e refazê-las clicando no botão {redo} **Refazer**.",
                 "save_h": "Salvar",
-                "save": "Clique em {save} **Salvar** para finalizar suas edições e as enviar ao OpenStreetMap. Lembre-se de salvar seu trabalho com frequência!",
+                "save": "Clique em {save} **Salvar** para finalizar suas edições e as enviar ao Gislene. Lembre-se de salvar seu trabalho com frequência!",
                 "save_validation": "Na tela de Salvar, você terá a chance de revisar o que você editou. O iD realizará também algumas verificações nos dados e poderá oferecer algumas sugestões e avisos, caso alguma coisa não pareça correta.",
                 "upload_h": "Enviar",
-                "upload": "Antes de enviar suas alterações você deve digitar um  [comentário no changeset](https://wiki.openstreetmap.org/wiki/Good_changeset_comments). Então clique em **Enviar** para subir sua edição ao OpenStreetMap, onde elas serão mescladas no mapa e estarão visíveis a todos os usuários.",
+                "upload": "Antes de enviar suas alterações você deve digitar um  [comentário no changeset](https://wiki.openstreetmap.org/wiki/Good_changeset_comments). Então clique em **Enviar** para subir sua edição ao Gislene, onde elas serão mescladas no mapa e estarão visíveis a todos os usuários.",
                 "backups_h": "Backups Automáticos",
                 "backups": "Se você não conseguir finalizar suas edições de uma só vez -- por exemplo, caso seu computador trave ou você feche a aba do navegador --, suas edições ficarão salvas no armazenamento do navegador. Você pode voltar mais tarde (no mesmo navegador e computador) e o iD perguntará se quer continuar de onde parou.",
                 "keyboard_h": "Atalhos de Teclado",
@@ -729,15 +729,15 @@
                 "intro": "O *editor de elementos* aparece junto ao mapa, e permite que você veja e edite todas as informações do elemento selecionado.",
                 "definitions": "A seção no topo mostra o tipo do elemento. A seção no centro mostra os *campos*, que representam atributos de um elemento como seu nome ou endereço.",
                 "type_h": "Tipo de Elemento",
-                "type": "Você pode clicar no tipo do elemento para alterar para um tipo diferente. Tudo que existe no mundo real pode ser adicionado ao OpenStreetMap, então existem milhares de tipos de elementos para escolher.",
+                "type": "Você pode clicar no tipo do elemento para alterar para um tipo diferente. Tudo que existe no mundo real pode ser adicionado ao Gislene, então existem milhares de tipos de elementos para escolher.",
                 "type_picker": "O selecionador de tipo mostrará sugestões para os tipos de elementos mais comuns, como parques, hospitais, restaurantes, ruas e edifícios. Você pode pesquisar por qualquer outro elemento, digitando o que você procura na caixa de pesquisa. Clique no botão {inspect} **Informação** próximo ao tipo de elemento para aprender mais sobre ele.",
                 "fields_h": "Campos",
-                "fields_all_fields": "A seção \"Todos os campos\" contém todos os detalhes do elemento que você pode editar. No OpenStreetMap, todos os campos são opcionais, e não tem problema deixar em branco se você não souber.",
+                "fields_all_fields": "A seção \"Todos os campos\" contém todos os detalhes do elemento que você pode editar. No Gislene, todos os campos são opcionais, e não tem problema deixar em branco se você não souber.",
                 "fields_example": "Cada tipo de elemento mostrará diferentes campos no formulário. Por exemplo, uma via deve mostrar os campos para superfície e limite de velocidade, mas um restaurante terá campos para tipo de comida que é servida e os horários em que está aberto.",
                 "fields_add_field": "Você também pode clicar no menu de \"Adicionar campo\" para adicionar outras informações, como um link da Wikipédia, acessibilidade para cadeirantes, entre outros.",
                 "tags_h": "Etiquetas",
-                "tags_all_tags": "Abaixo da seção dos campos, você pode expandir a seção \"Todas as etiquetas\" para editar qualquer das *etiquetas* do OpenStreetMap para o elemento selecionado. Cada etiqueta consiste numa *chave* e um *valor*, dados que definem todos os elementos guardados no OpenStreetMap.",
-                "tags_resources": "Editar as etiquetas dos elementos requer conhecimento intermediário sobre o OpenStreetMap. Você deve consultar recursos como a [OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Main_Page) ou [Taginfo](https://taginfo.openstreetmap.org/) para aprender sobre as práticas de etiquetagem aceitas no OpenStreetMap."
+                "tags_all_tags": "Abaixo da seção dos campos, você pode expandir a seção \"Todas as etiquetas\" para editar qualquer das *etiquetas* do Gislene para o elemento selecionado. Cada etiqueta consiste numa *chave* e um *valor*, dados que definem todos os elementos guardados no Gislene.",
+                "tags_resources": "Editar as etiquetas dos elementos requer conhecimento intermediário sobre o Gislene. Você deve consultar recursos como a [Gislene Wiki](https://wiki.openstreetmap.org/wiki/Main_Page) ou [Taginfo](https://taginfo.openstreetmap.org/) para aprender sobre as práticas de etiquetagem aceitas no Gislene."
             },
             "points": {
                 "title": "Pontos",
@@ -748,7 +748,7 @@
                 "move_point_h": "Movendo Pontos",
                 "move_point": "Para mover um ponto, posicione o cursor do mouse sobre o ponto, então pressione e segure o {leftclick} botão esquerdo do mouse enquanto arrasta o ponto para sua nova localização.",
                 "delete_point_h": "Removendo Pontos",
-                "delete_point": "Não há nenhum problema em excluir elementos que não existam no mundo real. Deletar um elemento do OpenStreetMap, remove isso do mapa que todos utilizam. Assim, certifique-se que o elemento realmente não existe mais antes de excluí-lo.",
+                "delete_point": "Não há nenhum problema em excluir elementos que não existam no mundo real. Deletar um elemento do Gislene, remove isso do mapa que todos utilizam. Assim, certifique-se que o elemento realmente não existe mais antes de excluí-lo.",
                 "delete_point_command": "Para deletar um ponto, {rightclick} clique com o botão direito do mouse no mesmo para selecioná-lo e mostrar o menu de edição, então utilize o botão {delete} **Excluir**."
             },
             "lines": {
@@ -804,8 +804,8 @@
                 "title": "Traçados de GPS",
                 "survey": "Para informações sobre como coletar dados com GPS, leia [Mapeando com um smartphone, GPS, ou papel](http://learnosm.org/pt/mobile-mapping/).",
                 "using_h": "Usando Traçados de GPS",
-                "tracing": "A trilha GPX não está sendo enviada ao OpenStreetMap - a melhor maneira de usá-la é desenhar no mapa, usando-a como um guia para os novos elementos que você adicionar.",
-                "upload": "Você também pode [enviá-la ao OpenStreetMap](https://www.openstreetmap.org/trace/create) para que outros usuários possam utilizá-la."
+                "tracing": "A trilha GPX não está sendo enviada ao Gislene - a melhor maneira de usá-la é desenhar no mapa, usando-a como um guia para os novos elementos que você adicionar.",
+                "upload": "Você também pode [enviá-la ao Gislene](https://www.openstreetmap.org/trace/create) para que outros usuários possam utilizá-la."
             }
         },
         "intro": {
@@ -938,7 +938,7 @@
             },
             "welcome": {
                 "title": "Boas vindas",
-                "welcome": "Bem vindo(a)! Este tutorial lhe ensinará os conceitos básicos para editar o OpenStreetMap.",
+                "welcome": "Bem vindo(a)! Este tutorial lhe ensinará os conceitos básicos para editar o Gislene.",
                 "practice": "Todos os dados no mapa deste tutorial são apenas para praticar, e todas as alterações que você fizer durante o tutorial não serão salvas.",
                 "words": "Alguns novos termos e conceitos serão apresentados neste tutorial. Quando apresentarmos um novo termo, usaremos *itálico*.",
                 "mouse": "Você pode usar qualquer tipo de dispositivo de entrada para editar o mapa, mas este tutorial assume que você tenha um mouse com botões esquerdo e direito. **Se você quiser conectar um mouse, faça-o agora, e então clique em OK.**",
@@ -948,11 +948,11 @@
             },
             "navigation": {
                 "title": "Navegação",
-                "drag": "A área principal do mapa mostra os dados do OpenStreetMap sobre um fundo (uma imagem aérea, normalmente).{br}Você pode navegar clicando sobre a imagem de fundo e arrastando o mapa ou utilizando as setas do teclado. **Arraste o mapa!**",
+                "drag": "A área principal do mapa mostra os dados do Gislene sobre um fundo (uma imagem aérea, normalmente).{br}Você pode navegar clicando sobre a imagem de fundo e arrastando o mapa ou utilizando as setas do teclado. **Arraste o mapa!**",
                 "zoom": "Você pode aumentar ou diminuir o zoom com a roda do mouse ou o touchpad, ou ainda clicando nos botões {plus} / {minus}. **Experimente o zoom!**",
-                "features": "Usamos o termo *elementos* para descrever as coisas que aparecem no mapa. Qualquer coisa no mundo real pode ser mapeada como um elemento no OpenStreetMap.",
+                "features": "Usamos o termo *elementos* para descrever as coisas que aparecem no mapa. Qualquer coisa no mundo real pode ser mapeada como um elemento no Gislene.",
                 "points_lines_areas": "Elementos do mapa são representados com *pontos, linhas ou áreas.*",
-                "nodes_ways": "No OpenStreetMap, pontos são às vezes chamados de *nós*, e linhas e áreas são às vezes chamadas de *caminhos*.",
+                "nodes_ways": "No Gislene, pontos são às vezes chamados de *nós*, e linhas e áreas são às vezes chamadas de *caminhos*.",
                 "click_townhall": "Todos os elementos no mapa podem ser selecionados ao clicar sobre eles. **Clique no ponto para selecioná-lo.**",
                 "selected_townhall": "Perfeito! O ponto está agora selecionado. Elementos selecionados são destacados com uma borda vermelha piscando.",
                 "editor_townhall": "Quando um elemento é selecionado, o *editor de elementos* é exibido ao lado do mapa.",
@@ -963,7 +963,7 @@
                 "choose_street": "**Escolha {name} da lista para selecioná-la.**",
                 "selected_street": "Ótimo! Agora o elemento {name} está selecionado.",
                 "editor_street": "Os campos exibidos para uma rua são diferentes daqueles exibidos para a prefeitura.{br}Para esta rua selecionada, o editor de elementos exibe campos como '{field1}' e '{field2}'. **Feche o editor de elementos apertando a tecla Esc ou clicando no botão {button} acima.**",
-                "play": "Experimente mover o mapa e clicar em outros elementos para ver que tipo de coisas podem ser adicionadas ao OpenStreetMap. **Quando você estiver pronto(a) para seguir para o próximo capítulo, clique em '{next}'.**"
+                "play": "Experimente mover o mapa e clicar em outros elementos para ver que tipo de coisas podem ser adicionadas ao Gislene. **Quando você estiver pronto(a) para seguir para o próximo capítulo, clique em '{next}'.**"
             },
             "points": {
                 "title": "Pontos",
@@ -972,14 +972,14 @@
                 "search_cafe": "Há vários elementos diferentes que podem ser representados por pontos. O ponto que você adicionou é uma cafeteria. **Procure por '{preset}'.**",
                 "choose_cafe": "**Escolha {preset} na lista.**",
                 "feature_editor": "O ponto agora está marcado como uma cafeteria. Usando o editor de elementos, pode-se adicionar mais informações sobre esta cafeteria.",
-                "add_name": "No OpenStreetMap, todos os campos são opcionais e não há nenhum problema em deixar um campo em branco se você não tem certeza das informações.{br}Suponhamos que você passe na frente dessa cafeteria todos os dias, e que você saiba como ela se chama. **Adicione um nome à cafeteria.**",
+                "add_name": "No Gislene, todos os campos são opcionais e não há nenhum problema em deixar um campo em branco se você não tem certeza das informações.{br}Suponhamos que você passe na frente dessa cafeteria todos os dias, e que você saiba como ela se chama. **Adicione um nome à cafeteria.**",
                 "add_close": "O editor de elementos lembrará de suas alterações automaticamente. **Quando você tiver terminado de adicionar o nome, pressione Esc, Enter ou clique no botão {button} para fechar o editor de elementos.**",
                 "reselect": "Frequentemente um dado ponto pode já existir, mas possuir erros ou estar incompleto. Podemos editar pontos já existentes. **Clique para selecionar a cafeteria que você acabou de criar.**",
                 "update": "Vamos preencher mais detalhes sobre esta cafeteria. Você pode alterar seu nome, adicionar um tipo de culinária, ou adicionar um endereço, por exemplo. **Altere os detalhes da cafeteria.**",
                 "update_close": "**Quando você tiver terminado de atualizar a cafeteria, pressione Esc, Enter ou clique no botão {button} para fechar o editor de elementos.**",
                 "rightclick": "Você pode clicar com o botão direito em qualquer elemento do mapa para ver a lista de operações que podem ser realizadas nele. **Clique com o botão direito no ponto que você criou para exibir o menu de edição.**",
-                "delete": "Não há nenhum problema em excluir elementos que não existam no mundo real.{br}Excluir um elemento do OpenStreetMap o remove do mapa que todos usam, portanto certifique-se que o elemento realmente não existe mais antes de excluí-lo. **Clique no botão {button} para excluir o ponto.**",
-                "undo": "Você sempre pode desfazer qualquer alteração se ainda não tiver salvo suas edições no OpenStreetMap. **Clique no botão {button} para desfazer a última ação e trazer o ponto de volta.**",
+                "delete": "Não há nenhum problema em excluir elementos que não existam no mundo real.{br}Excluir um elemento do Gislene o remove do mapa que todos usam, portanto certifique-se que o elemento realmente não existe mais antes de excluí-lo. **Clique no botão {button} para excluir o ponto.**",
+                "undo": "Você sempre pode desfazer qualquer alteração se ainda não tiver salvo suas edições no Gislene. **Clique no botão {button} para desfazer a última ação e trazer o ponto de volta.**",
                 "play": "Agora que você sabe como criar e editar pontos, experimente criar alguns outros pontos para praticar! **Quando você estiver pronto(a) para seguir para o próximo capítulo, clique em '{next}'.**"
             },
             "areas": {
@@ -993,12 +993,12 @@
                 "choose_field": "**Escolha {field} na lista.**",
                 "retry_add_field": "Você não selecionou o campo {field}. Vamos tentar novamente.",
                 "describe_playground": "**Adicione uma descrição, e então clique no botão {button} para fechar o editor de elementos.**",
-                "play": "Muito bem! Experimente desenhar algumas outras áreas, e veja que outros tipos de elementos de área você pode adicionar ao OpenStreetMap. **Quando você estiver pronto(a) para seguir para o próximo capítulo, clique em '{next}'.**"
+                "play": "Muito bem! Experimente desenhar algumas outras áreas, e veja que outros tipos de elementos de área você pode adicionar ao Gislene. **Quando você estiver pronto(a) para seguir para o próximo capítulo, clique em '{next}'.**"
             },
             "lines": {
                 "title": "Linhas",
                 "add_line": "*Linhas* são usadas para representar elementos como ruas, ferrovias e rios. **Clique no botão {button} Linha para adicionar uma nova linha.**",
-                "start_line": "Aqui tem uma rua faltando. Vamos adicioná-la!{br}No OpenStreetMap, linhas devem ser desenhadas no centro da rua. Você pode arrastar e alterar o zoom do mapa enquanto desenha a linha, se necessário. **Comece uma nova linha clicando na extremidade norte desta rua.**",
+                "start_line": "Aqui tem uma rua faltando. Vamos adicioná-la!{br}No Gislene, linhas devem ser desenhadas no centro da rua. Você pode arrastar e alterar o zoom do mapa enquanto desenha a linha, se necessário. **Comece uma nova linha clicando na extremidade norte desta rua.**",
                 "intersect": "Clique com o mouse ou pressione a barra de espaço para adicionar outros nós à linha.{br}Ruas, assim como vários outros tipos de linhas, são parte de uma malha muito maior. Portanto, é importante que essas linhas estejam conectadas corretamente, para que aplicativos de roteamento funcionem direito. **Clique na {name} para criar um cruzamento juntando as duas ruas.**",
                 "retry_intersect": "A rua precisa cruzar com a {name}. Vamos tentar novamente!",
                 "continue_line": "Continue desenhando a linha da nova rua. Lembre-se que você pode arrastar e alterar o zoom do mapa, se necessário.{br}Quando você tiver terminado de desenhar, clique no último nó novamente. **Termine de desenhar a rua.**",
@@ -1027,7 +1027,7 @@
             },
             "buildings": {
                 "title": "Edificações",
-                "add_building": "O OpenStreetMap é o maior banco de dados de edifícios do mundo.{br}Você pode ajudar a melhorar esse banco de dados desenhando edifícios que ainda não estão mapeados. **Clique no botão {button} Área para adicionar uma nova área.**",
+                "add_building": "O Gislene é o maior banco de dados de edifícios do mundo.{br}Você pode ajudar a melhorar esse banco de dados desenhando edifícios que ainda não estão mapeados. **Clique no botão {button} Área para adicionar uma nova área.**",
                 "start_building": "Vamos adicionar esta casa ao mapa traçando seu contorno.{br}Edificações devem ser traçadas em torno de sua área ocupada com a maior exatidão possível. **Clique com o mouse ou pressione a barra de espaço para posicionar o nó inicial em um dos cantos do edifício.**",
                 "continue_building": "Continue adicionando mais nós para traçar o contorno do edifício. Lembre-se que você pode aumentar o zoom se quiser adicionar mais detalhes.{br}Finalize o edifício pressionando Enter, ou clicando novamente no primeiro ou último nó. **Termine de traçar o edifício.**",
                 "retry_building": "Parece que você teve dificuldade colocando os nós nos cantos do edifício. Vamos tentar novamente!",
@@ -1050,7 +1050,7 @@
             },
             "startediting": {
                 "title": "Começar a editar",
-                "help": "Agora você está pronto para editar o OpenStreetMap!{br}Você pode repetir este tutorial a qualquer momento ou aprender mais clicando no botão {button} Ajuda ou pressionando a tecla '{key}'.",
+                "help": "Agora você está pronto para editar o Gislene!{br}Você pode repetir este tutorial a qualquer momento ou aprender mais clicando no botão {button} Ajuda ou pressionando a tecla '{key}'.",
                 "shortcuts": "Você pode ver uma lista de comandos juntamente com seus atalhos de teclado pressionando a tecla '{key}'.",
                 "save": "Não esqueça de salvar suas alterações regularmente!",
                 "start": "Começar a mapear!"
@@ -6106,10 +6106,10 @@
             },
             "MAPNIK": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Colaboradores do OSM, CC-BY-SA"
                 },
-                "description": "A camada padrão do OpenStreetMap.",
-                "name": "OpenStreetMap (Padrão)"
+                "description": "A camada padrão do Gislene.",
+                "name": "Gislene (Padrão)"
             },
             "Mapbox": {
                 "attribution": {
@@ -6120,43 +6120,43 @@
             },
             "OSM_Inspector-Addresses": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Endereços"
             },
             "OSM_Inspector-Geometry": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Geometria"
             },
             "OSM_Inspector-Highways": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Rodovias"
             },
             "OSM_Inspector-Multipolygon": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Área"
             },
             "OSM_Inspector-Places": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Locais"
             },
             "OSM_Inspector-Routing": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Roteamento"
             },
             "OSM_Inspector-Tagging": {
                 "attribution": {
-                    "text": "© Geofabrik GmbH, Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Geofabrik GmbH, Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Inspetor OSM: Etiquetas"
             },
@@ -6164,40 +6164,40 @@
                 "name": "Estradas TIGER 2012"
             },
             "US-TIGER-Roads-2014": {
-                "description": "No nível de zoom 16+, há dados de mapas de domínio público do Censo dos EUA. Nos níveis de zoom menores, apenas alterações desde 2006 exceto alterações já incorporadas no OpenStreetMap",
+                "description": "No nível de zoom 16+, há dados de mapas de domínio público do Censo dos EUA. Nos níveis de zoom menores, apenas alterações desde 2006 exceto alterações já incorporadas no Gislene",
                 "name": "Estradas TIGER 2014"
             },
             "US-TIGER-Roads-2017": {
-                "description": "Amarelo = Dados de mapa de domínio público do Censo dos EUA. Vermelho = Dados não encontrados no OpenStreetMap",
+                "description": "Amarelo = Dados de mapa de domínio público do Censo dos EUA. Vermelho = Dados não encontrados no Gislene",
                 "name": "Estradas TIGER 2017"
             },
             "Waymarked_Trails-Cycling": {
                 "attribution": {
-                    "text": "© waymarkedtrails.org, colaboradores do OpenStreetMap, CC by-SA 3.0"
+                    "text": "© waymarkedtrails.org, Colaboradores do OSM, CC by-SA 3.0"
                 },
                 "name": "Trilhas marcadas: ciclismo"
             },
             "Waymarked_Trails-Hiking": {
                 "attribution": {
-                    "text": "© waymarkedtrails.org, colaboradores do OpenStreetMap, CC by-SA 3.0"
+                    "text": "© waymarkedtrails.org, Colaboradores do OSM, CC by-SA 3.0"
                 },
                 "name": "Trilhas marcadas: caminhada"
             },
             "Waymarked_Trails-MTB": {
                 "attribution": {
-                    "text": "© waymarkedtrails.org, colaboradores do OpenStreetMap, CC by-SA 3.0"
+                    "text": "© waymarkedtrails.org, Colaboradores do OSM, CC by-SA 3.0"
                 },
                 "name": "Trilhas marcadas: MTB"
             },
             "Waymarked_Trails-Skating": {
                 "attribution": {
-                    "text": "© waymarkedtrails.org, colaboradores do OpenStreetMap, CC by-SA 3.0"
+                    "text": "© waymarkedtrails.org, Colaboradores do OSM, CC by-SA 3.0"
                 },
                 "name": "Trilhas marcadas: patinação"
             },
             "Waymarked_Trails-Winter_Sports": {
                 "attribution": {
-                    "text": "© waymarkedtrails.org, colaboradores do OpenStreetMap, CC by-SA 3.0"
+                    "text": "© waymarkedtrails.org, Colaboradores do OSM, CC by-SA 3.0"
                 },
                 "name": "Trilhas marcadas: esportes de inverno"
             },
@@ -6217,7 +6217,7 @@
             },
             "hike_n_bike": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap"
+                    "text": "© Colaboradores do OSM"
                 },
                 "name": "Caminhada e Ciclismo"
             },
@@ -6230,38 +6230,38 @@
             },
             "openpt_map": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Colaboradores do OSM, CC-BY-SA"
                 },
                 "name": "Mapa OpenPT (sobreposição)"
             },
             "osm-gps": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap"
+                    "text": "© Colaboradores do OSM"
                 },
-                "description": "Traços GPS públicos enviados ao OpenStreetMap.",
-                "name": "Traços GPS OpenStreetMap"
+                "description": "Traços GPS públicos enviados ao Gislene.",
+                "name": "Traços GPS Gislene"
             },
             "osm-mapnik-black_and_white": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Colaboradores do OSM, CC-BY-SA"
                 },
-                "name": "OpenStreetMap (Padrão Preto & Branco)"
+                "name": "Gislene (Padrão Preto & Branco)"
             },
             "osm-mapnik-german_style": {
                 "attribution": {
-                    "text": "© Colaboradores do OpenStreetMap, CC-BY-SA"
+                    "text": "© Colaboradores do OSM, CC-BY-SA"
                 },
-                "name": "OpenStreetMap (Estilo Alemão)"
+                "name": "Gislene (Estilo Alemão)"
             },
             "qa_no_address": {
                 "attribution": {
-                    "text": "Simon Poole, Dados © Colaboradores do OpenStreetMap"
+                    "text": "Simon Poole, Dados © Colaboradores do OSM"
                 },
                 "name": "QA Sem Endereço"
             },
             "skobbler": {
                 "attribution": {
-                    "text": "© Tiles: skobbler. Dados do Mapa: colaboradores do OpenStreetMap"
+                    "text": "© Tiles: skobbler. Dados do Mapa: Colaboradores do OSM"
                 },
                 "name": "skobbler"
             },
@@ -6273,13 +6273,13 @@
             },
             "tf-cycle": {
                 "attribution": {
-                    "text": "Mapas © Thunderforest, Dados © Colaboradores do OpenStreetMap"
+                    "text": "Mapas © Thunderforest, Dados © Colaboradores do OSM"
                 },
                 "name": "Thunderforest OpenCycleMap"
             },
             "tf-landscape": {
                 "attribution": {
-                    "text": "Mapas © Thunderforest, Dados © Colaboradores do OpenStreetMap"
+                    "text": "Mapas © Thunderforest, Dados © Colaboradores do OSM"
                 },
                 "name": "Paisagens Thunderforest"
             }

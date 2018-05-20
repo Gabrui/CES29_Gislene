@@ -161,9 +161,9 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal "rtl", dir
     params.delete(:dir)
 
-    I18n.locale = "he"
+    I18n.locale = "pt-BR" # Só português e inglês
 
-    assert_equal "rtl", dir
+    assert_equal "ltr", dir
 
     params[:dir] = "ltr"
     assert_equal "ltr", dir
