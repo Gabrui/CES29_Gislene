@@ -1,4 +1,4 @@
-GisleneOSM::Application.routes.draw do
+OpenStreetMap::Application.routes.draw do
   # API
   get "api/capabilities" => "api#capabilities"
 
