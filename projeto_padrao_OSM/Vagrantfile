@@ -2,36 +2,36 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  # use official ubuntu image for virtualbox
+  # Usa a imagem oficial de ubuntu da virtualbox
   config.vm.provider "virtualbox" do |vb, override|
     override.vm.box = "ubuntu/xenial64"
-    override.vm.synced_folder ".", "/srv/openstreetmap-website"
+    override.vm.synced_folder ".", "/srv/projeto"
     vb.customize ["modifyvm", :id, "--memory", "1024"]
     vb.customize ["modifyvm", :id, "--cpus", "2"]
   end
 
-  # use third party image and NFS sharing for lxc
+  # Configura o uso do compartilhamento lxc (contêiner)
   config.vm.provider "lxc" do |_, override|
     override.vm.box = "sputnik13/trusty64"
-    override.vm.synced_folder ".", "/srv/openstreetmap-website", :type => "nfs"
+    override.vm.synced_folder ".", "/srv/projeto", :type => "nfs"
   end
 
-  # use third party image and NFS sharing for libvirt
+  # Configura o uso do compartilhamento libvir (virtualização)
   config.vm.provider "libvirt" do |_, override|
     override.vm.box = "sputnik13/trusty64"
-    override.vm.synced_folder ".", "/srv/openstreetmap-website", :type => "nfs"
+    override.vm.synced_folder ".", "/srv/projeto", :type => "nfs"
   end
 
-  # configure shared package cache if possible
+  # Configura a cache de programas compartilhados se possível
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.enable :apt
     config.cache.scope = :box
   end
 
-  # port forward for webrick on 3000
+  # Redirecionamento de porta (port forward) para o servidor e banco de dados
   config.vm.network :forwarded_port, :guest => 3000, :host => 3000
   config.vm.network :forwarded_port, :guest => 5432, :host => 5433
 
-  # provision using a simple shell script
+  # Manda executar o script para instalar programas (provision)
   config.vm.provision :shell, :path => "script/vagrant/setup/provision.sh"
 end
