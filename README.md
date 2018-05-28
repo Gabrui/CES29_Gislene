@@ -1,22 +1,24 @@
 # Projeto com Padrão OSM (Open Street Map)
 
 Utilizar a máquina virtual VirtualBox com o gerenciador Vagrant para rodar o servidor.
+
 https://www.vagrantup.com/downloads.html
+
 https://www.virtualbox.org/wiki/Downloads
 
-Recomendo fortemente instalar pelo instalador do site e não pelo apt-get, pois o meu Virtual Box deu problema, só funcionou com o do site.
+Para usuários Linux, é recomendável utilizar o instalador do site  para obter a versão mais recente, e não pelo apt-get.
 ```
 sudo apt-get install vagrant
 sudo apt-get install virtualbox
 ```
 
-De posse dos programas acima instalados e rodando corretamente, vá na pasta do projeto e inicie a máquina virtual:
+De posse dos programas acima instalados e rodando corretamente, vá na pasta do projeto e inicie a máquina virtual. A maquina virtual tem uma pasta sincronizada com a pasta do projeto. Assim, arquivos modificados na pasta refletirá na máquina virtual. No Windows essa sincronização pode não funcionar, sendo necessário a edição dentro da própria máquina virtual.
 
 ```
 vagrant up
 ```
 OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo. Um comando que ajuda a configurar a VirtualBox em caso de problema é o sudo /sbin/vboxconfig.
-OBS2: No linux não coloque essa pasta em um sistema de arquivos que não é linux, perdi tempo com isso.
+OBS2: No linux não coloque essa pasta em um sistema de arquivos que não é linux, perdi tempo com isso. Para poder ter pastas sincronizadas
 
 Esse comando irá baixar a imagem de uma nova máquina virtual e instalar todas as dependências (banco de dados) nela, isso pode demorar um pouco pela primeira vez.
 
@@ -37,47 +39,38 @@ rails server --binding=0.0.0.0
 
 Qualquer modificação no código da pasta do projeto refletirá na máquina virtual, que usa a pasta compartilhada.
 
-Ativação do usuário criado sem serviço de e-mail:
-```
-bundle exec rails console
-user = User.find_by_display_name("My New User Name")
-user.status = "active"
-user.save!
-quit
-```
-
-Após isso, para ativar a autenticação para execução, entre nas configurações do seu usuário, configurações oauth, registrar aplicação, nome: "Local iD" e url: "http://localhost:3000", marque todas as alternativas, registre, copie o consumer key e copie para o arquivo config/application.yml.
+No Windows caso o compartilhamento de pastas não funcione corretamente, é necessário executar o arquivo bash ClonarGit.sh na pasta /home/ubuntu. Esse script efetuará o download local do repositório e fará as inicializações necessárias. Assim o projeto deverá ser acessado apenas dentro da máquina virtual na pasta /home/ubuntu/CES29_Gislene/projeto_padrao_OSM.
 
 ```
-id_key: suaKeyAqui
+cd /home/ubuntu
+./ClonarGit.sh
 ```
 
-Para rodar os testes:
-```
-cd /srv/projeto/
-rake test
-```
+É criado automaticamente uma conta de administrador com um aplicação OAuth para a autenticação da API. Esse código é executado automaticamente e pode ser visto no arquivo cria_admin.rb.
+
 
 ## Outros Comandos
 
-You can run the existing test suite with:
+Para rodar os testes existentes:
 
 ```
 bundle exec rake test
 ```
 
+Para atualizar o banco de dados depois de criar um novo model:
+
 ```
 bundle exec rake db:migrate
 ```
 
-You can generate test coverage stats with:
+Teste de cobertura estáticos:
 
 ```
 sudo gem install rcov
 rcov -x gems test/*/*.rb
 ```
 
-To generate the HTML documentation of the API/rails code, run the command
+Para gerar a documentação automática do código:
 
 ```
 rake doc:app
@@ -97,11 +90,13 @@ $ bundle exec rails console
 => true
 >> quit
 ```
-Rails has its own log.  To inspect the log, do this:
+
+O Rails faz um log automático, pode ser visto em:
 
 ```
 tail -f log/development.log
 ```
+
 
 ## Sobre
 
@@ -112,70 +107,17 @@ O projeto OSM é baseado na aplicação que roda o site do [OpenStreetMap](https
 
 Assim tem-se as seguintes aplicações já prontas:
 
-* The web site, including user accounts, diary entries, user-to-user messaging
-* The XML-based editing [API](https://wiki.openstreetmap.org/wiki/API_v0.6)
-* The integrated versions of the [iD](https://wiki.openstreetmap.org/wiki/ID) editor
-* The Browse pages - a web front-end to the OpenStreetMap data
-* The GPX uploads, browsing and API.
+* O site, que inclue autenticação e contas de usuários
+* A API de edição XML [API](https://wiki.openstreetmap.org/wiki/API_v0.6)
+* Versão integrada do editor [iD](https://wiki.openstreetmap.org/wiki/ID)
+* O Front-end do projeto OSM
+* Recebimento de dados de GPS GPX e sua interface gráfica.
 
 
-# CES29_Gislene sem OSM (Back end)
-
-## Configuração Inicial do projeto
-
-O projeto é realizado em Ruby on Rails, sendo necessário o seu executável e algumas bibliotecas dependentes, além do gerenciador de configuração Bundler.
-
-```
-sudo apt-get install ruby2.3 libruby2.3 ruby2.3-dev libmagickwand-dev libxml2-dev libxslt1-dev nodejs
-sudo gem2.3 install bundler
-```
-
-Asim após instalar o Gerenciador de Configurações, utilize-o para resolver as outras dependências, dentro do projeto:
-```
-bundle install
-```
-
-## Configuração Inicial do Banco de Dados
-
-### Instalação do Postgres
-
-Instale o postgres (versão maior ou igual a 9.6). No windows pode-se baixar os instaladores e seguir os passos de instalação.
-```
-sudo apt-get install postgresql postgresql-contrib libpq-dev
-sudo apt-get install pgadmin3
-```
-
-Assim, quando for pedido para criar o usuário na instalação, escreva o nome do seu próprio usuário e aceite-o como super usuário.
-
-```
-sudo -u postgres createuser --interactive
-```
-
-Agora você tem um usuário no banco de dados que é o seu próprio.
-
-
-### Atualização
-Depois, já que eu configurei os arquivos Gemfile e database.yml, é necessário rodar apenas esses comandos para atualizar o banco de dados:
-```
-bundler install
-rake db:setup
-rake db:migrate
-```
-OBS: não sei se o database.yml vai funcionar para windows, pois parece que o windows não tem domain sockets, então teria que usar um host: localhost
-
-### Visualização do banco de dados
-
-Instale o visualizador pgAdmin3. No windows pode-se baixar os instaladores e seguir os passos de instalação.
-```
-sudo apt-get install pgadmin3
-```
-
-No windows já vem configurado, mas no linux será necessário criar a conexão com o servidor:
-Vá em Add Server, coloque o nome (name) qualquer, host /var/run/postgresql, port 5432, maintenance db postgres, username o seu próprio.
 
 # Instalação Manual
 
-Usar o Ubuntu 16.04 com os programas:
+Todos os comandos citados abaixo estão disponíveis no arquivo de script provision.sh na pasta de script dentro de Vagrant/setub. Usar o Ubuntu 16.04 com os programas:
 
 ```
 sudo apt-get install ruby2.3 libruby2.3 ruby2.3-dev \
