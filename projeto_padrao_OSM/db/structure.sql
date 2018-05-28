@@ -482,6 +482,36 @@ ALTER SEQUENCE public.current_ways_id_seq OWNED BY public.current_ways.id;
 
 
 --
+-- Name: description_objetos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.description_objetos (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: description_objetos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.description_objetos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: description_objetos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.description_objetos_id_seq OWNED BY public.description_objetos.id;
+
+
+--
 -- Name: diary_comments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -905,6 +935,219 @@ ALTER SEQUENCE public.oauth_tokens_id_seq OWNED BY public.oauth_tokens.id;
 
 
 --
+-- Name: objeto_rules; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.objeto_rules (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: objeto_rules_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.objeto_rules_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: objeto_rules_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.objeto_rules_id_seq OWNED BY public.objeto_rules.id;
+
+
+--
+-- Name: objeto_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.objeto_types (
+    id bigint NOT NULL,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: objeto_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.objeto_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: objeto_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.objeto_types_id_seq OWNED BY public.objeto_types.id;
+
+
+--
+-- Name: objeto_values; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.objeto_values (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: objeto_values_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.objeto_values_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: objeto_values_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.objeto_values_id_seq OWNED BY public.objeto_values.id;
+
+
+--
+-- Name: objetos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.objetos (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: objetos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.objetos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: objetos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.objetos_id_seq OWNED BY public.objetos.id;
+
+
+--
+-- Name: properties; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.properties (
+    id bigint NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: properties_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.properties_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: properties_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.properties_id_seq OWNED BY public.properties.id;
+
+
+--
+-- Name: property_rules; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.property_rules (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: property_rules_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.property_rules_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: property_rules_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.property_rules_id_seq OWNED BY public.property_rules.id;
+
+
+--
+-- Name: property_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.property_types (
+    id bigint NOT NULL,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: property_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.property_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: property_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.property_types_id_seq OWNED BY public.property_types.id;
+
+
+--
 -- Name: redactions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -985,6 +1228,127 @@ CREATE TABLE public.relations (
 CREATE TABLE public.schema_migrations (
     version character varying NOT NULL
 );
+
+
+--
+-- Name: tipo_rules; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tipo_rules (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tipo_rules_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tipo_rules_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tipo_rules_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tipo_rules_id_seq OWNED BY public.tipo_rules.id;
+
+
+--
+-- Name: tipo_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tipo_types (
+    id bigint NOT NULL,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tipo_types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tipo_types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tipo_types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tipo_types_id_seq OWNED BY public.tipo_types.id;
+
+
+--
+-- Name: tipo_values; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tipo_values (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tipo_values_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tipo_values_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tipo_values_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tipo_values_id_seq OWNED BY public.tipo_values.id;
+
+
+--
+-- Name: tipos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tipos (
+    id bigint NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: tipos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tipos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tipos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tipos_id_seq OWNED BY public.tipos.id;
 
 
 --
@@ -1250,6 +1614,13 @@ ALTER TABLE ONLY public.current_ways ALTER COLUMN id SET DEFAULT nextval('public
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY public.description_objetos ALTER COLUMN id SET DEFAULT nextval('public.description_objetos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY public.diary_comments ALTER COLUMN id SET DEFAULT nextval('public.diary_comments_id_seq'::regclass);
 
 
@@ -1320,7 +1691,84 @@ ALTER TABLE ONLY public.oauth_tokens ALTER COLUMN id SET DEFAULT nextval('public
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY public.objeto_rules ALTER COLUMN id SET DEFAULT nextval('public.objeto_rules_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objeto_types ALTER COLUMN id SET DEFAULT nextval('public.objeto_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objeto_values ALTER COLUMN id SET DEFAULT nextval('public.objeto_values_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objetos ALTER COLUMN id SET DEFAULT nextval('public.objetos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.properties ALTER COLUMN id SET DEFAULT nextval('public.properties_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.property_rules ALTER COLUMN id SET DEFAULT nextval('public.property_rules_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.property_types ALTER COLUMN id SET DEFAULT nextval('public.property_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY public.redactions ALTER COLUMN id SET DEFAULT nextval('public.redactions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_rules ALTER COLUMN id SET DEFAULT nextval('public.tipo_rules_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_types ALTER COLUMN id SET DEFAULT nextval('public.tipo_types_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_values ALTER COLUMN id SET DEFAULT nextval('public.tipo_values_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipos ALTER COLUMN id SET DEFAULT nextval('public.tipos_id_seq'::regclass);
 
 
 --
@@ -1456,6 +1904,14 @@ ALTER TABLE ONLY public.current_ways
 
 
 --
+-- Name: description_objetos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.description_objetos
+    ADD CONSTRAINT description_objetos_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: diary_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1568,6 +2024,62 @@ ALTER TABLE ONLY public.oauth_tokens
 
 
 --
+-- Name: objeto_rules_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objeto_rules
+    ADD CONSTRAINT objeto_rules_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: objeto_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objeto_types
+    ADD CONSTRAINT objeto_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: objeto_values_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objeto_values
+    ADD CONSTRAINT objeto_values_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: objetos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.objetos
+    ADD CONSTRAINT objetos_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: properties_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.properties
+    ADD CONSTRAINT properties_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: property_rules_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.property_rules
+    ADD CONSTRAINT property_rules_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: property_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.property_types
+    ADD CONSTRAINT property_types_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: redactions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1605,6 +2117,38 @@ ALTER TABLE ONLY public.relations
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: tipo_rules_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_rules
+    ADD CONSTRAINT tipo_rules_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tipo_types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_types
+    ADD CONSTRAINT tipo_types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tipo_values_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipo_values
+    ADD CONSTRAINT tipo_values_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tipos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tipos
+    ADD CONSTRAINT tipos_pkey PRIMARY KEY (id);
 
 
 --
@@ -2587,6 +3131,18 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20161011010929'),
 ('20170222134109'),
 ('20180204153242'),
+('20180501174343'),
+('20180501180811'),
+('20180501180848'),
+('20180501183826'),
+('20180501183858'),
+('20180501183922'),
+('20180501183957'),
+('20180501184025'),
+('20180501184054'),
+('20180501184115'),
+('20180501192000'),
+('20180501192034'),
 ('21'),
 ('22'),
 ('23'),
