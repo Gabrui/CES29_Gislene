@@ -14,17 +14,17 @@ apt-get update
 apt-get upgrade -y
 
 # Baixa o necessário
-sudo apt-get install -y ruby2.3 libruby2.3 ruby2.3-dev \
+apt-get install -y ruby2.3 libruby2.3 ruby2.3-dev \
                      libmagickwand-dev libxml2-dev libxslt1-dev nodejs \
                      apache2 apache2-dev build-essential git-core \
                      postgresql postgresql-contrib libpq-dev postgresql-server-dev-all \
                      libsasl2-dev imagemagick \
                      phantomjs
-sudo gem2.3 install bundler
+gem2.3 install bundler
 
 ## Faz o bundle install
 pushd /srv/projeto
-sudo -u vagrant -H bundle install --retry=10 --jobs=2
+bundle install
 # Cria um usuário e o banco de dados caso necessário
 db_user_exists=`sudo -u postgres psql postgres -tAc "select 1 from pg_roles where rolname='vagrant'"`
 if [ "$db_user_exists" != "1" ]; then
@@ -56,7 +56,7 @@ fi
 sudo -u vagrant rake db:migrate
 
 # Cria um usuário administrador padrão
-rails runner -e development cria_admin.rb
+sudo -u vagrant rails runner -e development cria_admin.rb
 
 popd
 
