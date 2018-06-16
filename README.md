@@ -11,16 +11,68 @@ Para usuários Linux, é recomendável utilizar o instalador do site  para obter
 sudo apt-get install vagrant
 sudo apt-get install virtualbox
 ```
+OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo. Um comando que ajuda a configurar a VirtualBox em caso de problema é o sudo /sbin/vboxconfig.
+
+OBS2: No linux não coloque essa pasta em um sistema de arquivos que não é linux, perdi tempo com isso. Para poder ter pastas sincronizadas
+
 
 De posse dos programas acima instalados e rodando corretamente, vá na pasta do projeto e inicie a máquina virtual. A maquina virtual tem uma pasta sincronizada com a pasta do projeto. Assim, arquivos modificados na pasta refletirá na máquina virtual. No Windows essa sincronização pode não funcionar, sendo necessário a edição dentro da própria máquina virtual.
+
+No Windows caso o compartilhamento de pastas não funcione corretamente, é necessário executar o arquivo bash ClonarGit.sh na pasta /home/ubuntu. Esse script efetuará o download local do repositório e fará as inicializações necessárias. Assim o projeto deverá ser acessado apenas dentro da máquina virtual na pasta /home/ubuntu/CES29_Gislene/projeto_padrao_OSM.
+
+```
+cd /home/ubuntu
+./ClonarGit.sh
+```
 
 ```
 vagrant up
 ```
-OBS: O virtual box reclamou do secure boot no meu PC, tive que desabilitá-lo. Um comando que ajuda a configurar a VirtualBox em caso de problema é o sudo /sbin/vboxconfig.
-OBS2: No linux não coloque essa pasta em um sistema de arquivos que não é linux, perdi tempo com isso. Para poder ter pastas sincronizadas
 
-Esse comando irá baixar a imagem de uma nova máquina virtual e instalar todas as dependências (banco de dados) nela, isso pode demorar um pouco pela primeira vez.
+Caso se esteja atrás de um proxy, é necessário configurá-lo na máquina virtual, para que a mesma possa acessar a internet para baixar os programas e as dependências necessárias. A ideia é declarar variáveis de ambiente com a autenticação para o proxy, instalar o plugin do Vagrant para lidar com o proxy e configurar mais variáveis de ambiente para serem utilizadas pelo plugin, que efetivamente coordenará o tráfego de rede da máquina virtual. Os comandos para os sistemas Linux são (lembrando de alterar o user, password, host e port do comando):
+
+```
+export http_proxy="http://user:password@host:port"
+export https_proxy="http://user:password@host:port"
+vagrant plugin install vagrant-proxyconf
+```
+
+E depois de instalado o plugin proxy:
+
+```
+export VAGRANT_HTTP_PROXY="http://user:password@host:port"
+export VAGRANT_NO_PROXY="127.0.0.1"
+vagrant up
+```
+
+Caso o ambiente seja Windows, a única diferença são nas variáveis de ambiente:
+
+```
+set http_proxy=http://user:password@host:port
+set https_proxy=%http_proxy%
+vagrant plugin install vagrant-proxyconf
+```
+
+E depois de instalado o plugin proxy:
+
+```
+set VAGRANT_HTTP_PROXY="%http_proxy%"
+set VAGRANT_NO_PROXY="127.0.0.1"
+vagrant up
+```
+
+A execução da máquina virtual, dentro da pasta do projeto que contém o Vagrantfile, se dá por meio do seguinte comando. As Figuras 3, 4, 5 e 6 ilustram a saída desse comando, responsável por instalar e configurar a máquina virtual, baixando todas as dependências. Esse comando irá baixar a imagem de uma nova máquina virtual e instalar todas as dependências (banco de dados) nela, isso pode demorar um pouco pela primeira vez.
+
+```
+vagrant up
+```
+
+Se houver algum problema durante a instalação, a máquina pode ser parada com o comando de parada, inicializada novamente, e reconfigurada com o comando vagrant provision, que executará novamente o script de configuração inicial.
+```
+vagrant halt
+vagrant up
+vagrant provision
+```
 
 Assim que a instalação for concluída, você pode logar na máquina virtual por meio do comando
 ```
@@ -37,14 +89,9 @@ Para rodar o servidor, use o comando:
 rails server --binding=0.0.0.0
 ```
 
-Qualquer modificação no código da pasta do projeto refletirá na máquina virtual, que usa a pasta compartilhada.
+Qualquer modificação no código da pasta do projeto refletirá na máquina virtual, que usa a pasta compartilhada (/srv/projeto).
 
-No Windows caso o compartilhamento de pastas não funcione corretamente, é necessário executar o arquivo bash ClonarGit.sh na pasta /home/ubuntu. Esse script efetuará o download local do repositório e fará as inicializações necessárias. Assim o projeto deverá ser acessado apenas dentro da máquina virtual na pasta /home/ubuntu/CES29_Gislene/projeto_padrao_OSM.
-
-```
-cd /home/ubuntu
-./ClonarGit.sh
-```
+O servidor pode ser acessado localmente pelo navegador no endereço localhost:3000, e o banco de dados pode ser acessado pela porta 5433, com usuário Vagrant sem senha.
 
 É criado automaticamente uma conta de administrador com um aplicação OAuth para a autenticação da API. Esse código é executado automaticamente e pode ser visto no arquivo cria_admin.rb.
 
