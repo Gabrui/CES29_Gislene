@@ -24,3 +24,5 @@ Rails.application.config.assets.precompile += %w[help/introduction.*]
 Rails.application.config.assets.precompile += %w[iD/img/*.svg iD/img/*.png iD/img/*.gif]
 Rails.application.config.assets.precompile += %w[iD/img/pattern/*.png]
 Rails.application.config.assets.precompile += %w[iD/locales/*.json]
+Rails.application.config.assets.precompile += %w( nossoaom.css )
+Rails.application.config.assets.precompile += %w( nossoaom.js )

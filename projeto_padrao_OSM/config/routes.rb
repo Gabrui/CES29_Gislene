@@ -1,4 +1,7 @@
 OpenStreetMap::Application.routes.draw do
+
+  get "/aom" => "nossoaom#paginainicial"
+
   # API
   get "api/capabilities" => "api#capabilities"
 
