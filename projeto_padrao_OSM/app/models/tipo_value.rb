@@ -10,7 +10,7 @@
 class TipoValue < ApplicationRecord
   #Representa as caracteristicas do Tipo
   #Colecao de Property
-	has_many :propertys
+	has_many :properties
 	
 	#def initialize
 	#	@propertys = self.propertys.build

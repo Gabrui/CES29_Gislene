@@ -13,28 +13,32 @@ class Property < ApplicationRecord
   # Essa classe representa a propriedade de um Objeto ou Tipo
   
   # Toda propriedade (Property) tem um value, que tipicamente é uma string
-  attr_accessor :value
+  #attr_accessor :value
 
   # Toda propriedade (Property) tem uma PropertyType
   #Quando Property for destruído, a sua PropertyType também deve ser destruída
-  has_one :propertyType , dependent: :destroy
+  has_one :property_type , dependent: :destroy
   
   #validar se as dois atributos de Property estão presentes.
-  validates_presence_of :propertyType , :value
-
-  def initialize(type,value)
+  validates_presence_of :property_type , :value
+=begin
+  def initialize(value)
         super()
-        @propertyType = type #associar com o PropertyType
-        @value = value       #atribuir value
-        self.save            #salvar
+        #self.propertyType = type #associar com o PropertyType
+        self.value = value       #atribuir value
+        #self.save            #salvar
   end
 
   def name
-      @propertyType.name
+      self.property_type.name
   end
 
   def value
     @value
   end
 
+  def value=(v)
+    @value = v
+  end
+=end
 end

@@ -1,0 +1,2 @@
+class AomAtributosController < ApplicationController
+end

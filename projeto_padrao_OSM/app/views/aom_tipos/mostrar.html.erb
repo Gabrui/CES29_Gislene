@@ -1,0 +1,8 @@
+<% @atributos.each do |d| %>
+    <div class="card col-xs-4">
+      <h2> <%= d.nome %> </h2>
+      <p> <%= d.descricao %> </p>
+      <%= link_to "", destination_path(d) %>
+      
+    </div>
+<% end %>

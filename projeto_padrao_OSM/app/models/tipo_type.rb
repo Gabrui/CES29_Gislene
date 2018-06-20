@@ -6,6 +6,11 @@
 #  name       :string           primary key
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  tipo_id    :bigint(8)
+#
+# Indexes
+#
+#  index_tipo_types_on_tipo_id  (tipo_id)
 #
 
 class TipoType < ApplicationRecord

@@ -2,15 +2,15 @@
 #
 # Table name: property_types
 #
-#  id            :bigint(8)        not null, primary key
-#  name          :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  properties_id :bigint(8)
+#  id          :bigint(8)        not null, primary key
+#  name        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  property_id :bigint(8)
 #
 # Indexes
 #
-#  index_property_types_on_properties_id  (properties_id)
+#  index_property_types_on_property_id  (property_id)
 #
 
 class PropertyType < ApplicationRecord
@@ -21,33 +21,34 @@ class PropertyType < ApplicationRecord
   belongs_to :property , dependent: :destroy
   
   #Toda PropertyType possui name que tipicamente é uma string
-  attr_accessor :name
+  #attr_accessor :name
 
   #validar se name existe
   validates_presence_of :name
-
+=begin
   def initialize (name,value)
     super()
 
     #Criar regra de criação de Property
     @rule = PropertyRule.new()
-    self.save
-    @property = self.createProperty(value)
-    @property.save
+    self.property = self.createProperty(value)
+    self.property.save
     self.save
   end
-   
+=end
+
+  def self.criarProperty(nome, valor)
+    propt = PropertyType.new
+    propt.name = nome
+    propt.property = PropertyRule.new().create(valor)
+    propt.property.save!
+    propt.save!
+    return propt
+  end
+
    def createProperty(value)
        #PropertyType cria a sua Property por meio da regra de criação
-      @rule.create(self,value)
-   end
-
-   def name
-     @name
-   end
-
-   def property
-    @property
+      @rule.create(value)
    end
   
 end

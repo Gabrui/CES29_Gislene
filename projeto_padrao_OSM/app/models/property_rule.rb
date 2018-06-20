@@ -10,8 +10,10 @@
 class PropertyRule < ApplicationRecord
 
   #Regra de criação da Property
-  def create (type,value)
+  def create (value)
     #criar Property
-    Property.new(type,value)
+    p = Property.new
+    p.value =value
+    return p
   end
 end
