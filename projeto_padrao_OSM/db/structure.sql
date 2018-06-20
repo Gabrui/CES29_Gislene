@@ -180,6 +180,37 @@ ALTER SEQUENCE public.acls_id_seq OWNED BY public.acls.id;
 
 
 --
+-- Name: aom_tipos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.aom_tipos (
+    id bigint NOT NULL,
+    nome_tipo text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: aom_tipos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.aom_tipos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: aom_tipos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.aom_tipos_id_seq OWNED BY public.aom_tipos.id;
+
+
+--
 -- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1572,6 +1603,13 @@ ALTER TABLE ONLY public.acls ALTER COLUMN id SET DEFAULT nextval('public.acls_id
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY public.aom_tipos ALTER COLUMN id SET DEFAULT nextval('public.aom_tipos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY public.changeset_comments ALTER COLUMN id SET DEFAULT nextval('public.changeset_comments_id_seq'::regclass);
 
 
@@ -1805,6 +1843,14 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 ALTER TABLE ONLY public.acls
     ADD CONSTRAINT acls_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: aom_tipos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.aom_tipos
+    ADD CONSTRAINT aom_tipos_pkey PRIMARY KEY (id);
 
 
 --
@@ -3143,6 +3189,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180501184115'),
 ('20180501192000'),
 ('20180501192034'),
+('20180620002912'),
 ('21'),
 ('22'),
 ('23'),

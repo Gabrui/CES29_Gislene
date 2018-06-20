@@ -1,4 +1,4 @@
-class NossoaomController < ApplicationController
+class AomTiposController < ApplicationController
     def paginainicial
         @tipos = AomTipo.all
     end
@@ -18,7 +18,7 @@ class NossoaomController < ApplicationController
 
     private 
     def parametros_tipo 
-        params.require(:tipo).permit(:nome_tipo) 
+        params.require(:aom_tipo).permit(:nome_tipo) 
     end
 
 end

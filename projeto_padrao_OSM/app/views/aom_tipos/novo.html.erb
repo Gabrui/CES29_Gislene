@@ -1,0 +1,9 @@
+<%= form_for @tipo_novo do |f| %>  
+    <div class="field"> 
+      <%= f.label :tipo %><br> 
+      <%= f.text_area :nome_tipo %> 
+    </div> 
+    <div class="actions"> 
+      <%= f.submit "Criar" %> 
+    </div> 
+<% end %>

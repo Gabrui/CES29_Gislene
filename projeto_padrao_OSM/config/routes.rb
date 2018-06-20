@@ -1,6 +1,8 @@
 OpenStreetMap::Application.routes.draw do
 
-  get "/aom" => "nossoaom#paginainicial"
+  get "/aom_tipos" => "aom_tipos#paginainicial"
+  get "/aom_tipos/novo" => "aom_tipos#novo"
+  post "/aom_tipos" => "aom_tipos#criar"
 
   # API
   get "api/capabilities" => "api#capabilities"
