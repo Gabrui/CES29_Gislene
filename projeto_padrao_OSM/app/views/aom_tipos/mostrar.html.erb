@@ -1,8 +1,41 @@
+<div class="header">
+  <div class="container">
+     <h1> <%= @tipo_encontrado.nome_tipo%> </h1>
+  </div>
+</div>
+
+<p>
+<%= @tipo_encontrado.descricao %>
+</p>
+
+<div class="messages">
+  <div class="container">
 <% @atributos.each do |d| %>
-    <div class="card col-xs-4">
+    <div class="message"> 
       <h2> <%= d.nome %> </h2>
       <p> <%= d.descricao %> </p>
-      <%= link_to "", destination_path(d) %>
-      
+      <%= link_to 'Deletar', atributo_path(d),
+               method: :delete,
+               data: { confirm: 'Certeza?' } %>
     </div>
 <% end %>
+
+<h2>Criar Atributo</h2>
+<%=  form_with(model: [ @tipo_encontrado, @tipo_encontrado.aom_atributos.build ], url: :criar_atributo, local: true) do |form| %>
+  <div class="field"> 
+    <%= form.label :nome, "Nome do atributo" %><br>
+    <%= form.text_field :nome %>
+  </div>
+  <div class="field"> 
+    <%= form.label :descricao, "Descrição do atributo" %><br>
+    <%= form.text_area :descricao %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div> 
+  <%= form.hidden_field :idtipo, :value => @tipo_encontrado.id %>
+<% end %>
+
+<%= link_to 'Voltar', aom_path %>
+</div>
+</div>

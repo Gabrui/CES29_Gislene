@@ -1,4 +1,6 @@
 class AomTiposController < ApplicationController
+    layout "nossoaom"
+
     def paginainicial
         @tipos = AomTipo.all
     end
@@ -18,12 +20,23 @@ class AomTiposController < ApplicationController
 
     def mostrar
         @tipo_encontrado = AomTipo.find(params[:id])
-        @atributos = @tipo_encontrado.aom_tipos
+        @atributos = @tipo_encontrado.aom_atributos
+    end
+
+    def apagar
+        @tipo = AomTipo.find(params[:id])
+        @tipo.destroy
+        redirect_to aom_path
+    end
+
+    def gerar_json
+        dados = AomTipo.all
+        render :json => dados
     end
 
     private 
     def parametros_tipo 
-        params.require(:aom_tipo).permit(:nome_tipo)
+        params.require(:aom_tipo).permit(:nome_tipo, :descricao)
     end
 
 end

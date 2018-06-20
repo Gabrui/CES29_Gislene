@@ -11,6 +11,7 @@ class TipoValue < ApplicationRecord
   #Representa as caracteristicas do Tipo
   #Colecao de Property
 	has_many :properties
+	belongs_to :tipo
 	
 	#def initialize
 	#	@propertys = self.propertys.build

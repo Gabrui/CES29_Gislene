@@ -21,20 +21,21 @@ class TipoType < ApplicationRecord
   belongs_to :tipo
 
   #Todo TipoType tem um name, que é uma string
-  attr_accessor :name
+  #attr_accessor :name
   
   #validar se existe name
   validates_presence_of :name
   
   self.primary_key = "name"
 
-  def initialize (name,values,valuesNames,descriptionObj,descriptionObjNames)
-    super()
-    @name = name
-    @rule = TipoRule.new()
-    @tipo = self.createTipo(values,valuesNames,descriptionObj,descriptionObjNames)
-    @tipo.save
-    self.save
+  def self.criartipo (name,values,valuesNames,descriptionObj,descriptionObjNames)
+    tipo_novo = TipoType.new()
+    tipo_novo.name = name
+    rule = TipoRule.new()
+    tipo_novo.tipo = rule.create(values,valuesNames,descriptionObj,descriptionObjNames)
+    tipo_novo.tipo.save!
+    tipo_novo.save!
+    return tipo_novo
   end
    
    #TipoType sabe criar Tipo aplicando uma regra de criação

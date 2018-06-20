@@ -28,7 +28,7 @@ class Tipo < ApplicationRecord
   #Validar se existem os atributos
   validates_presence_of :tipo_type, :tipoValue, :description_objeto
 
-  def initialize(type,value,descriptionObjeto)
+  def initialize (value,descriptionObjeto)
     super()
     @tipo_type = type
     @tipoValue = value

@@ -11,4 +11,5 @@
 
 class AomTipo < ApplicationRecord
     has_many :aom_atributos
+    validates :nome_tipo, presence: true
 end
