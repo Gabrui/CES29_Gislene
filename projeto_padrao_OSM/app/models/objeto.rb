@@ -1,4 +1,13 @@
-class Objeto <  ApplicationRecord :: Model
+# == Schema Information
+#
+# Table name: objetos
+#
+#  id         :bigint(8)        not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Objeto <  ApplicationRecord
   
   #Classe que representa a abstração Objeto
   
@@ -15,7 +24,7 @@ class Objeto <  ApplicationRecord :: Model
   validates_presence_of :objetoType , :value
 
   def initialize(type,value,tipo)
-    super
+    super()
     @objetoValues = value
     @objetoType = type
     @tipo = tipo

@@ -122,7 +122,7 @@ CREATE TYPE public.user_status_enum AS ENUM (
 
 CREATE FUNCTION public.maptile_for_point(bigint, bigint, integer) RETURNS integer
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'maptile_for_point';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'maptile_for_point';
 
 
 --
@@ -131,7 +131,7 @@ CREATE FUNCTION public.maptile_for_point(bigint, bigint, integer) RETURNS intege
 
 CREATE FUNCTION public.tile_for_point(integer, integer) RETURNS bigint
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'tile_for_point';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'tile_for_point';
 
 
 --
@@ -140,7 +140,7 @@ CREATE FUNCTION public.tile_for_point(integer, integer) RETURNS bigint
 
 CREATE FUNCTION public.xid_to_int4(xid) RETURNS integer
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'xid_to_int4';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'xid_to_int4';
 
 
 SET default_tablespace = '';

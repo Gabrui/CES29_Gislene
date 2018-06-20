@@ -1,0 +1,2 @@
+class AomTipo < ApplicationRecord
+end

@@ -1,4 +1,14 @@
-class PropertyType < ApplicationRecord :: Model
+# == Schema Information
+#
+# Table name: property_types
+#
+#  id         :bigint(8)        not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class PropertyType < ApplicationRecord
   
   #Essa classe representa o nome da propriedade
   #Toda PropertyType percente a uma Property
@@ -6,19 +16,20 @@ class PropertyType < ApplicationRecord :: Model
   belongs_to :property , dependent: :destroy
   
   #Toda PropertyType possui name que tipicamente é uma string
-  attr_acessor :name
+  attr_accessor :name
 
   #validar se name existe
   validates_presence_of :name
 
   def initialize (name,value)
-    super
+    super()
 
     #Criar regra de criação de Property
     @rule = PropertyRule.new()
+    self.save
     @property = self.createProperty(value)
-    @property.save!
-    self.save!
+    @property.save
+    self.save
   end
    
    def createProperty(value)
@@ -28,6 +39,10 @@ class PropertyType < ApplicationRecord :: Model
 
    def name
      @name
+   end
+
+   def property
+    @property
    end
   
 end

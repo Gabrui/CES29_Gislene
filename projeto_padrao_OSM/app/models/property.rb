@@ -1,4 +1,14 @@
-class Property < ApplicationRecord :: Model
+# == Schema Information
+#
+# Table name: properties
+#
+#  id         :bigint(8)        not null, primary key
+#  value      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Property < ApplicationRecord
 
   # Essa classe representa a propriedade de um Objeto ou Tipo
   
@@ -13,10 +23,10 @@ class Property < ApplicationRecord :: Model
   validates_presence_of :propertyType , :value
 
   def initialize(type,value)
-        super
+        super()
         @propertyType = type #associar com o PropertyType
         @value = value       #atribuir value
-        self.save!               #salvar
+        self.save            #salvar
   end
 
   def name

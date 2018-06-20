@@ -1,4 +1,13 @@
-class ObjetoRule < ApplicationRecord :: Model
+# == Schema Information
+#
+# Table name: objeto_rules
+#
+#  id         :bigint(8)        not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class ObjetoRule < ApplicationRecord
 
   #Regra de crição  de Objeto
   def create (type,valueNames, values, tipo)
