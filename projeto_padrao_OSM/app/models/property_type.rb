@@ -2,10 +2,15 @@
 #
 # Table name: property_types
 #
-#  id         :bigint(8)        not null, primary key
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :bigint(8)        not null, primary key
+#  name          :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  properties_id :bigint(8)
+#
+# Indexes
+#
+#  index_property_types_on_properties_id  (properties_id)
 #
 
 class PropertyType < ApplicationRecord

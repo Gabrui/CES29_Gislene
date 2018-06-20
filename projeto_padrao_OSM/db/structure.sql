@@ -1155,7 +1155,8 @@ CREATE TABLE public.property_types (
     id bigint NOT NULL,
     name character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    properties_id bigint
 );
 
 
@@ -2507,6 +2508,13 @@ CREATE INDEX index_oauth_tokens_on_user_id ON public.oauth_tokens USING btree (u
 
 
 --
+-- Name: index_property_types_on_properties_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_property_types_on_properties_id ON public.property_types USING btree (properties_id);
+
+
+--
 -- Name: index_user_blocks_on_user_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3190,6 +3198,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180501192000'),
 ('20180501192034'),
 ('20180620002912'),
+('20180620131510'),
 ('21'),
 ('22'),
 ('23'),
