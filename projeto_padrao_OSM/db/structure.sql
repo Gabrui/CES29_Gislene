@@ -122,7 +122,7 @@ CREATE TYPE public.user_status_enum AS ENUM (
 
 CREATE FUNCTION public.maptile_for_point(bigint, bigint, integer) RETURNS integer
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'maptile_for_point';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'maptile_for_point';
 
 
 --
@@ -131,7 +131,7 @@ CREATE FUNCTION public.maptile_for_point(bigint, bigint, integer) RETURNS intege
 
 CREATE FUNCTION public.tile_for_point(integer, integer) RETURNS bigint
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'tile_for_point';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'tile_for_point';
 
 
 --
@@ -140,7 +140,7 @@ CREATE FUNCTION public.tile_for_point(integer, integer) RETURNS bigint
 
 CREATE FUNCTION public.xid_to_int4(xid) RETURNS integer
     LANGUAGE c STRICT
-    AS '/srv/openstreetmap-website/db/functions/libpgosm.so', 'xid_to_int4';
+    AS '/srv/projeto/db/functions/libpgosm.so', 'xid_to_int4';
 
 
 SET default_tablespace = '';
@@ -177,6 +177,71 @@ CREATE SEQUENCE public.acls_id_seq
 --
 
 ALTER SEQUENCE public.acls_id_seq OWNED BY public.acls.id;
+
+
+--
+-- Name: aom_atributos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.aom_atributos (
+    id bigint NOT NULL,
+    nome text,
+    descricao text,
+    aom_tipo_id bigint,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: aom_atributos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.aom_atributos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: aom_atributos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.aom_atributos_id_seq OWNED BY public.aom_atributos.id;
+
+
+--
+-- Name: aom_tipos; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.aom_tipos (
+    id bigint NOT NULL,
+    nome_tipo text,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    descricao text
+);
+
+
+--
+-- Name: aom_tipos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.aom_tipos_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: aom_tipos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.aom_tipos_id_seq OWNED BY public.aom_tipos.id;
 
 
 --
@@ -1124,7 +1189,8 @@ CREATE TABLE public.property_types (
     id bigint NOT NULL,
     name character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    property_id bigint
 );
 
 
@@ -1268,7 +1334,8 @@ CREATE TABLE public.tipo_types (
     id bigint NOT NULL,
     name character varying,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    tipo_id bigint
 );
 
 
@@ -1572,6 +1639,20 @@ ALTER TABLE ONLY public.acls ALTER COLUMN id SET DEFAULT nextval('public.acls_id
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY public.aom_atributos ALTER COLUMN id SET DEFAULT nextval('public.aom_atributos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.aom_tipos ALTER COLUMN id SET DEFAULT nextval('public.aom_tipos_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY public.changeset_comments ALTER COLUMN id SET DEFAULT nextval('public.changeset_comments_id_seq'::regclass);
 
 
@@ -1805,6 +1886,22 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 ALTER TABLE ONLY public.acls
     ADD CONSTRAINT acls_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: aom_atributos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.aom_atributos
+    ADD CONSTRAINT aom_atributos_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: aom_tipos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.aom_tipos
+    ADD CONSTRAINT aom_tipos_pkey PRIMARY KEY (id);
 
 
 --
@@ -2384,6 +2481,13 @@ CREATE INDEX gpx_files_visible_visibility_idx ON public.gpx_files USING btree (v
 
 
 --
+-- Name: index_aom_atributos_on_aom_tipo_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_aom_atributos_on_aom_tipo_id ON public.aom_atributos USING btree (aom_tipo_id);
+
+
+--
 -- Name: index_changeset_comments_on_created_at; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2458,6 +2562,20 @@ CREATE UNIQUE INDEX index_oauth_tokens_on_token ON public.oauth_tokens USING btr
 --
 
 CREATE INDEX index_oauth_tokens_on_user_id ON public.oauth_tokens USING btree (user_id);
+
+
+--
+-- Name: index_property_types_on_property_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_property_types_on_property_id ON public.property_types USING btree (property_id);
+
+
+--
+-- Name: index_tipo_types_on_tipo_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_tipo_types_on_tipo_id ON public.tipo_types USING btree (tipo_id);
 
 
 --
@@ -2833,6 +2951,14 @@ ALTER TABLE ONLY public.diary_entry_subscriptions
 
 
 --
+-- Name: fk_rails_9e8f54201d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.aom_atributos
+    ADD CONSTRAINT fk_rails_9e8f54201d FOREIGN KEY (aom_tipo_id) REFERENCES public.aom_tipos(id);
+
+
+--
 -- Name: friends_friend_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3143,6 +3269,11 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20180501184115'),
 ('20180501192000'),
 ('20180501192034'),
+('20180620002912'),
+('20180620131510'),
+('20180620155959'),
+('20180620160428'),
+('20180620170045'),
 ('21'),
 ('22'),
 ('23'),

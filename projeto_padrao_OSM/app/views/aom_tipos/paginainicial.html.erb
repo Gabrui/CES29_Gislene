@@ -1,0 +1,24 @@
+<div class="header">
+  <div class="container">
+    <h1>Adaptative Object Model</h1>
+  </div>
+</div>
+
+<div class="messages">
+  <div class="container">
+  
+    <% @tipos.each do |tipo| %> 
+    <div class="message"> 
+      <p class="content"><%= tipo.nome_tipo %></p>
+      <p class="time"><%= tipo.descricao %></p>
+      <%= link_to 'Editar', tipo_path(tipo) %>
+      <%= link_to 'Apagar', tipo_path(tipo),
+              method: :delete,
+              data: { confirm: 'Você tem certeza?' } %>
+    </div> 
+    <% end %>
+    <%= link_to 'Criar Tipo', "/aom/novo" %>
+  </div>
+</div>
+
+

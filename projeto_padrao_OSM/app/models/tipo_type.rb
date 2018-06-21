@@ -1,4 +1,19 @@
-class TipoType < ApplicationRecord :: Model
+# == Schema Information
+#
+# Table name: tipo_types
+#
+#  id         :bigint(8)        not null
+#  name       :string           primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  tipo_id    :bigint(8)
+#
+# Indexes
+#
+#  index_tipo_types_on_tipo_id  (tipo_id)
+#
+
+class TipoType < ApplicationRecord
   
   #Classe que representa o nome de Tipo
 
@@ -6,19 +21,21 @@ class TipoType < ApplicationRecord :: Model
   belongs_to :tipo
 
   #Todo TipoType tem um name, que é uma string
-  attr_acessor :name
+  #attr_accessor :name
   
   #validar se existe name
   validates_presence_of :name
   
-  def initialize (name,values,valuesNames,descriptionObj,descriptionObjNames)
-    super
-    self.primary_key = name
-    @name = name
-    @rule = tipoRule.new()
-    @tipo = self.createTipo(values,valuesNames,descriptionObj,descriptionObjNames)
-    @tipo.save!
-    self.save!
+  self.primary_key = "name"
+
+  def self.criartipo (name,values,valuesNames,descriptionObj,descriptionObjNames)
+    tipo_novo = TipoType.new()
+    tipo_novo.name = name
+    rule = TipoRule.new()
+    tipo_novo.tipo = rule.create(values,valuesNames,descriptionObj,descriptionObjNames)
+    tipo_novo.tipo.save!
+    tipo_novo.save!
+    return tipo_novo
   end
    
    #TipoType sabe criar Tipo aplicando uma regra de criação

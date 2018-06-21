@@ -1,4 +1,19 @@
 OpenStreetMap::Application.routes.draw do
+
+  get "/aom" => "aom_tipos#paginainicial", as: :aom
+  get "/aom/novo" => "aom_tipos#novo"
+  get "/aom/json" => "aom_tipos#gerar_json"
+  post "/aom" => "aom_tipos#criar"
+  get '/aom/:id' => 'aom_tipos#mostrar', as: :tipo
+  delete "/aom/:id" => "aom_tipos#apagar"
+
+  get "/aom_atributos/:id" => "aom_atributos#mostrar", as: :atributo
+  #get "/aom_atributos/novo" => "aom_atributos#novo"
+  delete "/aom_atributos/:id" => "aom_atributos#apagar"
+  post "/aom_atributos" => "aom_atributos#criar", as: :criar_atributo
+  #get '/aom_atributos/:id/editar' => 'aom_atributos#editar', as: :editar_atributo
+  #patch '/aom_atributos/:id' => 'aom_atributos#atualizar'
+
   # API
   get "api/capabilities" => "api#capabilities"
 
