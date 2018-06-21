@@ -1991,8 +1991,7 @@ pt-BR:
       read and accept: Por favor leia o contrato e pressione o botão abaixo para confirmar
         que você aceita os termos deste contrato para suas contribuições existentes
         e futuras.
-      consider_pd: Em adição ao disposto acima, eu desejo que minhas contribuições
-        sejam de Domínio Público
+      consider_pd: Em adição ao disposto acima, eu desejo que minhas contribuições sejam de Domínio
       consider_pd_why: o que é isso?
       consider_pd_why_url: http://www.osmfoundation.org/wiki/License/Why_would_I_want_my_contributions_to_be_public_domain
       guidance: 'Informações para ajudar a entender estes termos: um <a href="%{summary}">Resumo
@@ -2006,7 +2005,7 @@ pt-BR:
       legale_names:
         france: França
         italy: Itália
-        rest_of_world: Outros países
+        rest_of_world: CCA-SJ
     no_such_user:
       title: Usuário não existe
       heading: O usuário %{user} não existe
@@ -2117,8 +2116,7 @@ pt-BR:
         not yet agreed: Você não aceitou os novos Termos do Contribuidor.
         review link text: Por favor siga este link quando você puder para revisar
           e aceitar os novos Termos de Contribuição.
-        agreed_with_pd: Você também declara que considera suas edições em Domínio
-          Público.
+        agreed_with_pd: Você também declara que considera suas edições em Domínio.
         link: http://www.osmfoundation.org/wiki/License/Contributor_Terms
         link text: o que é isso?
       profile description: 'Descrição do Perfil:'

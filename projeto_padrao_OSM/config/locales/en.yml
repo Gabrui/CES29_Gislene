@@ -1871,7 +1871,7 @@ en:
       title: "Contributor terms"
       heading: "Contributor terms"
       read and accept: "Please read the agreement and press the agree button to confirm that you accept the terms of this agreement for your existing and future contributions."
-      consider_pd: "In addition to the above agreement, I consider my contributions to be in the Public Domain"
+      consider_pd: "In addition to the above agreement, I consider my contributions to be in the Domain"
       consider_pd_why: "what's this?"
       consider_pd_why_url: https://www.osmfoundation.org/wiki/License/Why_would_I_want_my_contributions_to_be_public_domain
       guidance: 'Information to help understand these terms: a <a href="%{summary}">human readable summary</a> and some <a href="%{translations}">informal translations</a>'
@@ -1883,7 +1883,7 @@ en:
       legale_names:
         france: "France"
         italy: "Italy"
-        rest_of_world: "Rest of the world"
+        rest_of_world: "CCA-SJ"
     no_such_user:
       title: "No such user"
       heading: "The user %{user} does not exist"
@@ -1983,7 +1983,7 @@ en:
         agreed: "You have agreed to the new Contributor Terms."
         not yet agreed: "You have not yet agreed to the new Contributor Terms."
         review link text: "Please follow this link at your convenience to review and accept the new Contributor Terms."
-        agreed_with_pd: "You have also declared that you consider your edits to be in the Public Domain."
+        agreed_with_pd: "You have also declared that you consider your edits to be in the Domain."
         link: "https://www.osmfoundation.org/wiki/License/Contributor_Terms"
         link text: "what is this?"
       profile description: "Profile Description:"
