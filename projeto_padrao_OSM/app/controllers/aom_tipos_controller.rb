@@ -25,6 +25,9 @@ class AomTiposController < ApplicationController
 
     def apagar
         @tipo = AomTipo.find(params[:id])
+        @tipo.aom_atributos.each do |atrib|
+            atrib.destroy
+        end
         @tipo.destroy
         redirect_to aom_path
     end
