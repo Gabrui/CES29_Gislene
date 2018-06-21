@@ -43,13 +43,16 @@ document.addEventListener("DOMContentLoaded", function() {
             "geometry": ["relation"]
         }
       };
-      let atributoObj = {};
+      let atributoObj = iD.data.presets.fields;
+      for (let i in atributoObj) {
+        atributoObj[i].universal = false;
+      }
       for (let i=0; i<j.length; i++) {
         console.log(j[i].nome_tipo);
         let nome = j[i].nome_tipo;
         let tag = {};
         tag[nome] = "*";
-        presobj[nome] = {"name": nome, "tags":tag, "geometry": ["point", "area", "line"], "fields":[]};
+        presobj[nome] = {"name": nome, "tags":tag, "geometry": ["point", "area", "line"], "fields":["name"]};
         for (let k=0; k<j[i].atributos.length; k++) {
           let atrib = j[i].atributos[k];
           atributoObj[atrib.nome] = {
@@ -61,14 +64,14 @@ document.addEventListener("DOMContentLoaded", function() {
           presobj[nome].fields.push(atrib.nome);
         }
       }
-
+/*
       atributoObj["name"] = {
         "key": "name",
         "type": "localized",
         "label": "Name",
-        "placeholder": "Nome próprio."
+        "placeholder": "Nome a inserir"
       };
-
+*/
       for (let i in primi) {
         presobj[i] = primi[i];
       }
@@ -78,7 +81,9 @@ document.addEventListener("DOMContentLoaded", function() {
       iD.data.presets = {
         fields: atributoObj,
         presets: presobj
-    };
+      };
+      //iD.data.presets.fields = atributoObj;
+      //iD.data.presets.presets = presobj;
       console.log(iD.data.presets);
 
       var id = iD.Context()
