@@ -33,7 +33,17 @@ class AomTiposController < ApplicationController
     end
 
     def gerar_json
-        dados = AomTipo.all
+        tipos = AomTipo.all
+        dados = []
+        tipos.each do |tipo|
+            obj = {"nome_tipo": tipo.nome_tipo}
+            atribsvec = []
+            tipo.aom_atributos.each do |atrib|
+                atribsvec.push({"nome": atrib.nome, "hint": atrib.descricao})
+            end
+            obj["atributos"] = atribsvec
+            dados.push(obj)
+        end
         render :json => dados
     end
 
