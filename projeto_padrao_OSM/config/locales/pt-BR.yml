@@ -1044,8 +1044,7 @@ pt-BR:
     intro_text: O Gislene é um mapa do mundo, criado por pessoas como você e
       de uso livre sob uma licença aberta.
     intro_2_create_account: Criar uma conta de usuário
-    partners_html: A hospedagem é apoiada por %{ucl}, %{bytemark}, %{ic}, e outros
-      %{partners}.
+    partners_html: ""
     partners_ucl: UCL
     partners_ic: Imperial College de Londres
     partners_bytemark: Hospedagem Bytemark

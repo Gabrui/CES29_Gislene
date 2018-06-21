@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       };
       let atributoObj = iD.data.presets.fields;
+      //atributoObj.name.placeholder = "Nome próprio da instância."
       for (let i in atributoObj) {
         atributoObj[i].universal = false;
       }
@@ -64,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
           presobj[nome].fields.push(atrib.nome);
         }
       }
-/*
+
       atributoObj["name"] = {
         "key": "name",
         "type": "localized",
         "label": "Name",
         "placeholder": "Nome a inserir"
       };
-*/
+
       for (let i in primi) {
         presobj[i] = primi[i];
       }
